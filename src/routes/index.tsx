@@ -262,51 +262,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* APP */}
-      <section className="bg-forest-deep text-cream py-28 md:py-40 overflow-hidden">
-        <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-16 lg:grid-cols-2 items-center">
-          <div>
-            <SectionHeading
-              tone="dark"
-              kicker="Member App"
-              title="Your tee sheet, in your pocket."
-              intro="Book rounds, reserve simulator bays, scan the seasonal menu and track your handicap — designed for the way you actually use a phone on a course."
-            />
-            <ul className="reveal mt-10 grid grid-cols-2 gap-y-5 gap-x-8 text-sm text-cream/75 max-w-md">
-              <li>· Live tee sheet</li>
-              <li>· Simulator bookings</li>
-              <li>· Member chat</li>
-              <li>· Course conditions</li>
-              <li>· Events RSVP</li>
-              <li>· Apple Wallet pass</li>
-            </ul>
-            <div className="reveal mt-10 flex gap-3">
-              <a href="#" className="px-6 py-3 text-xs tracking-[0.24em] uppercase border border-cream/30 hover:bg-cream hover:text-charcoal transition-colors">App Store</a>
-              <a href="#" className="px-6 py-3 text-xs tracking-[0.24em] uppercase border border-cream/30 hover:bg-cream hover:text-charcoal transition-colors">Google Play</a>
-            </div>
-          </div>
-          <div className="reveal relative">
-            <div className="mx-auto w-[260px] md:w-[320px] aspect-[9/19] rounded-[2.6rem] bg-charcoal border border-cream/20 shadow-[0_60px_120px_-40px_rgba(0,0,0,0.6)] p-3 rotate-[6deg] hover:rotate-[2deg] transition-transform duration-700">
-              <div className="h-full w-full rounded-[2rem] overflow-hidden relative">
-                <img src={golfImg} alt="App" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-transparent to-charcoal/80" />
-                <div className="absolute top-6 inset-x-6 flex items-center justify-between text-cream/90 text-[0.7rem] tracking-[0.18em] uppercase">
-                  <span>Tee Sheet</span>
-                  <span>RHGC</span>
-                </div>
-                <div className="absolute bottom-6 inset-x-6 space-y-3">
-                  {["7:42 — Whitford / Park", "8:14 — Reyes / Singh / Cole", "8:36 — Open · Reserve"].map((s) => (
-                    <div key={s} className="bg-cream/10 backdrop-blur-md border border-cream/15 px-4 py-3 text-cream text-[0.78rem]">
-                      {s}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* TESTIMONIALS */}
       <section className="bg-cream py-28 md:py-40">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
