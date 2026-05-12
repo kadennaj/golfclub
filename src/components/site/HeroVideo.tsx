@@ -40,7 +40,7 @@ export function HeroVideo({ videoId, poster, className = "", start = 0 }: Props)
     return () => io.disconnect();
   }, []);
 
-  const src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&playsinline=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&start=${start}`;
+  const src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&playsinline=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&start=${start}`;
 
   return (
     <div ref={ref} className={`absolute inset-0 overflow-hidden ${className}`}>
@@ -53,14 +53,18 @@ export function HeroVideo({ videoId, poster, className = "", start = 0 }: Props)
         } transition-opacity duration-700`}
       />
       {mount && (
-        <div className="absolute inset-0 pointer-events-none">
-          {/* 16:9 cover trick: enlarge iframe until it overflows on the smaller axis */}
+        <div className="absolute inset-0 pointer-events-none select-none">
+          {/* Scale up to crop YT chrome + any baked-in lower-third overlays from source footage */}
           <iframe
             title="Course aerial"
             src={src}
             allow="autoplay; encrypted-media"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full border-0"
+            tabIndex={-1}
+            aria-hidden="true"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full border-0 scale-[1.35] origin-center pointer-events-none"
           />
+          {/* Click-shield: blocks any YT play/pause overlays from receiving pointer events */}
+          <div className="absolute inset-0" />
         </div>
       )}
     </div>
