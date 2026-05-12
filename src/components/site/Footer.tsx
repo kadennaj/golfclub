@@ -48,7 +48,6 @@ export function Footer() {
           items={[
             ["Membership", "/membership"],
             ["Academy", "/lessons"],
-            ["App", "/app"],
             ["Events", "/events"],
           ]}
         />
