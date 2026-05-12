@@ -53,7 +53,7 @@ export function HeroVideo({ videoId, poster, className = "", start = 0 }: Props)
         } transition-opacity duration-700`}
       />
       {mount && (
-        <div className="absolute inset-0 pointer-events-none select-none">
+        <div className="absolute inset-0 select-none">
           {/* Scale up to crop YT chrome + any baked-in lower-third overlays from source footage */}
           <iframe
             title="Course aerial"
@@ -63,8 +63,14 @@ export function HeroVideo({ videoId, poster, className = "", start = 0 }: Props)
             aria-hidden="true"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full border-0 scale-[1.35] origin-center pointer-events-none"
           />
-          {/* Click-shield: blocks any YT play/pause overlays from receiving pointer events */}
-          <div className="absolute inset-0" />
+          {/* Click-shield ABOVE the iframe — captures every pointer event so YT
+              never receives a hover/click that would surface the play/pause UI. */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-10"
+            style={{ pointerEvents: "auto" }}
+            onClick={(e) => e.preventDefault()}
+          />
         </div>
       )}
     </div>
