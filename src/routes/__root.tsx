@@ -67,16 +67,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Richmond Hill Golf Club — Toronto's Premier Public Golf Experience" },
+      { title: "Richmond Hill Golf Club — Public Golf in Richmond Hill, Ontario" },
       {
         name: "description",
         content:
-          "A heritage parkland course minutes from Toronto. Tee times, memberships, weddings, dining and the city's most cinematic round of golf.",
+          "A fully public 18-hole parkland golf course in Richmond Hill, Ontario. Tee times, lessons, simulators, tournaments and the Richvale Room — open to everyone.",
       },
       { property: "og:title", content: "Richmond Hill Golf Club" },
       {
         property: "og:description",
-        content: "Toronto's premier public golf experience. Heritage. Modernized.",
+        content: "Public golf in Richmond Hill, Ontario. 18 holes · Par 70 · open to everyone.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

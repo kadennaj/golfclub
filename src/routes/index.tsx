@@ -25,10 +25,10 @@ export const Route = createFileRoute("/")({
 });
 
 const HOLES = [
-  { number: "04", par: "5", yardage: "548", name: "The Reach", description: "A sweeping dogleg framed by century maples; risk-reward at every yard.", image: hole1 },
-  { number: "07", par: "3", yardage: "186", name: "Glasshouse", description: "Tabletop green guarded by a horseshoe of bunkers — placement over power.", image: hole2 },
-  { number: "12", par: "4", yardage: "402", name: "Mill Pond", description: "An island-style approach across glassy water at the fold of the property.", image: hole3 },
-  { number: "16", par: "4", yardage: "421", name: "The Vale", description: "Elevated tee, fog-soft mornings, the most photographed hole on property.", image: hole4 },
+  { number: "01", par: "4", yardage: "408", name: "Opener", description: "A tough opening hole featuring a sharp dogleg left. An aggressive drive around the corner is rewarded with a short approach to a two-tiered green.", image: hole1 },
+  { number: "05", par: "4", yardage: "389", name: "The Carry", description: "Play to the 150 stake for safety, or be aggressive and carry the water on the right. A wide but sharply two-tiered green awaits.", image: hole2 },
+  { number: "11", par: "4", yardage: "393", name: "The Chute", description: "A notorious tee shot, steeply downhill through a narrow chute of trees to a small landing area sloping right to left.", image: hole3 },
+  { number: "18", par: "5", yardage: "495", name: "The Finish", description: "Rounds are made or ruined here. Choose your 200-yard club off the tee and lay up to 100 for the best chance of par or birdie.", image: hole4 },
 ];
 
 function HomePage() {
@@ -44,29 +44,31 @@ function HomePage() {
         <div className="relative z-10 mx-auto max-w-[1480px] px-5 md:px-10 min-h-[100svh] flex flex-col justify-end pb-20 md:pb-28 pt-32">
           <div className="reveal kicker text-gold mb-6 flex items-center gap-3">
             <span className="h-px w-10 bg-gold/70" />
-            Established 1958 · Richmond Hill, Ontario
+            Public Golf Club · Richmond Hill, Ontario
           </div>
           <h1 className="reveal font-serif text-[clamp(3rem,8vw,8rem)] leading-[0.95] max-w-[16ch] text-balance">
-            Toronto's premier
+            Golf Course
             <br />
-            <em className="not-italic text-gold/95">public golf</em> experience.
+            <em className="not-italic text-gold/95">Now Open</em> for the Season.
           </h1>
           <p className="reveal mt-8 max-w-xl text-base md:text-lg text-cream/80 leading-relaxed">
-            A heritage parkland course, an unhurried clubhouse and a modern membership —
-            shaped by sixty years of quiet refinement.
+            A fully public 18-hole parkland course minutes from Toronto. Tee
+            times, lessons and simulators — all open to everyone, every day.
           </p>
           <div className="reveal mt-10 flex flex-wrap gap-4">
             <a
-              href="#book"
+              href="https://richmond-hill-golf.book.teeitup.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-cream text-charcoal px-7 py-4 text-xs tracking-[0.24em] uppercase hover:bg-gold transition-colors duration-300"
             >
               Book Tee Time
             </a>
             <Link
-              to="/membership"
+              to="/golf"
               className="inline-flex items-center gap-3 border border-cream/40 px-7 py-4 text-xs tracking-[0.24em] uppercase hover:bg-cream hover:text-charcoal transition-colors duration-300"
             >
-              Explore Membership
+              Tour the Course
             </Link>
           </div>
         </div>
@@ -80,10 +82,11 @@ function HomePage() {
       {/* BRAND STATEMENT */}
       <section className="bg-cream py-28 md:py-40">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
-          <div className="reveal kicker text-forest mb-8">A Course With Memory</div>
+          <div className="reveal kicker text-forest mb-8">A Course For Everyone</div>
           <p className="reveal font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.15] max-w-5xl text-balance text-charcoal">
-            Six decades of fairways carved through mature parkland, finished with a
-            clubhouse that knows your name and a round that asks for your best.
+            Eighteen holes, three tee decks and an open door — Richmond Hill
+            Golf Club is a fully public facility where every player, from
+            beginner to scratch, is welcome.
           </p>
         </div>
       </section>
@@ -94,7 +97,7 @@ function HomePage() {
           <SectionHeading
             kicker="The Experience"
             title="Six ways to spend a day at Richmond Hill."
-            intro="From an honest round on a heritage course to a private tasting in the clubhouse, every visit is shaped around the unhurried rituals of the game."
+            intro="An honest round on a parkland course, lessons in our heated indoor academy, simulator bays in the off-season and a clubhouse that serves all of it."
             className="mb-20 md:mb-28"
           />
           <div className="space-y-24 md:space-y-36">
@@ -102,15 +105,15 @@ function HomePage() {
               index="01"
               kicker="The Course"
               title="Eighteen holes of considered parkland."
-              body="A walkable, classically-routed course through mature trees and gentle elevation — refined annually by the grounds team without losing its 1958 character."
+              body="A walkable, classically-routed course featuring three tee decks suited to every skill level — narrow holes, several hazards and plenty of opportunities for birdie."
               image={golfImg}
               to="/golf"
             />
             <ExperienceTile
               index="02"
               kicker="Tournaments"
-              title="Corporate tournaments, faithfully run."
-              body="From foursomes to full shotgun events. We handle the logistics so you can focus on hosting — caddies, scoring, hospitality, the full programme."
+              title="Corporate and charity tournaments, faithfully run."
+              body="From foursomes to full shotgun events. Pre-planning, scoring, contest holes, GPS-enabled carts and on-day support from a staff who handle the details for you."
               image={tournamentImg}
               to="/events"
               reverse
@@ -119,15 +122,15 @@ function HomePage() {
               index="03"
               kicker="Academy"
               title="Lessons that move your handicap."
-              body="Private instruction with PGA professionals using TrackMan analysis and seasonal short-game clinics for every level of player."
+              body="Private, semi-private, group, junior camps and clinics — year-round, with CPGA professionals and three Foresight Sports GC Hawk simulators."
               image={lessonsImg}
               to="/lessons"
             />
             <ExperienceTile
               index="04"
               kicker="Events & Weddings"
-              title="A pavilion built for golden hour."
-              body="Floor-to-ceiling glass, panoramic 9th-fairway views and a culinary team that's quietly become one of York Region's best-kept secrets."
+              title="The Richvale Room — up to 200 guests."
+              body="A vaulted ceiling, a 60-foot section of windows overlooking the forest and ravine and custom menus for weddings, social functions and corporate meetings."
               image={eventsImg}
               to="/events"
               reverse
@@ -135,16 +138,16 @@ function HomePage() {
             <ExperienceTile
               index="05"
               kicker="Simulators"
-              title="Year-round play in the lounge."
-              body="State-of-the-art TrackMan simulators with curated whisky service. Practice in January like it's July — and book the bay for your foursome."
+              title="Year-round play in the Learning Centre."
+              body="Three state-of-the-art Foresight Sports GC Hawk simulators — 10 ft high, 15 ft wide hitting bays. Available all winter and bookable by the hour."
               image={simulatorImg}
               to="/lessons"
             />
             <ExperienceTile
               index="06"
               kicker="Dining"
-              title="The clubhouse, after the round."
-              body="A seasonal kitchen rooted in Ontario producers. Open for breakfast, lunch and quiet dinners — members and guests welcome."
+              title="The 19th Hole Lounge."
+              body="A newly renovated lounge seating 40, plus an upper and lower patio overlooking the 18th hole — the perfect spot for a meal and a drink after the round."
               image={diningImg}
               to="/dining"
               reverse
@@ -164,7 +167,7 @@ function HomePage() {
             tone="dark"
             kicker="Signature Holes"
             title="Four holes that tell the story of the course."
-            intro="Each was reshaped by our agronomy team in the last decade — and each rewards thought over force."
+            intro="From a sharp dogleg opener to a finishing par 5 that has decided more matches than we can count."
             className="mb-16"
           />
         </div>
@@ -176,28 +179,28 @@ function HomePage() {
       {/* STATS */}
       <section className="bg-forest-deep text-cream py-8 md:py-16">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-cream/10">
-          <div className="lg:px-10"><Stat kicker="Heritage" value={67} suffix=" yrs" label="Of continuous play in Richmond Hill" /></div>
-          <div className="lg:px-10"><Stat kicker="Annual Rounds" value={48000} label="Played across our membership and guests" /></div>
-          <div className="lg:px-10"><Stat kicker="Members" value={1100} suffix="+" label="Quiet, multi-generational community" /></div>
-          <div className="lg:px-10"><Stat kicker="Awards" value={14} label="Best parkland course recognitions since 2010" /></div>
+          <div className="lg:px-10"><Stat kicker="Established" value={1958} label="A heritage of public golf in Richmond Hill" /></div>
+          <div className="lg:px-10"><Stat kicker="The Course" value={18} label="Holes · Par 70 · three tee decks" /></div>
+          <div className="lg:px-10"><Stat kicker="Pace of Play" value={4} suffix="h 20m" label="Average round across the season" /></div>
+          <div className="lg:px-10"><Stat kicker="Booking Window" value={4} suffix=" weeks" label="Advance tee time reservations" /></div>
         </div>
       </section>
 
-      {/* MEMBERSHIP */}
-      <section className="bg-charcoal text-cream py-28 md:py-40" id="book">
+      {/* PREPAID ELITE */}
+      <section className="bg-charcoal text-cream py-28 md:py-40" id="elite">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
           <SectionHeading
             tone="dark"
-            kicker="Membership"
-            title="Belong to a course you'll know for a lifetime."
-            intro="Three considered tiers, each with full access to the clubhouse, simulator lounge and member calendar."
+            kicker="Prepaid Elite Membership"
+            title="Convenience and savings, without losing your spot in line."
+            intro="Top up an account and draw down for everything at the club — golf, range, proshop, food and beverage. Funds roll over for three years and discounts apply automatically."
             className="mb-16"
           />
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              { name: "Social", price: "From $1,800", featured: false, items: ["Full clubhouse + dining", "Simulator + practice access", "Member events"] },
-              { name: "Weekday", price: "From $4,400", featured: true, items: ["Unlimited weekday play", "Advance tee time priority", "All Social benefits"] },
-              { name: "Full", price: "From $7,200", featured: false, items: ["Unlimited 7-day play", "Reciprocal Ontario clubs", "Locker + bag storage"] },
+              { name: "Silver", price: "Save 15% off green fees", featured: false, items: ["10% off Proshop, F&B and range", "4-week advance booking", "Signing privileges", "Funds roll over 3 years"] },
+              { name: "Gold", price: "Save 20% off green fees", featured: true, items: ["10% off Proshop, F&B and range", "4-week advance booking", "Signing privileges", "Funds roll over 3 years"] },
+              { name: "Platinum", price: "Save 25% off green fees", featured: false, items: ["10% off Proshop, F&B and range", "4-week advance booking", "Signing privileges", "Funds roll over 3 years"] },
             ].map((t) => (
               <div
                 key={t.name}
@@ -205,7 +208,7 @@ function HomePage() {
                   t.featured ? "border-gold/60 ring-1 ring-gold/30" : ""
                 }`}
               >
-                {t.featured && <div className="kicker text-gold mb-3">Most Chosen</div>}
+                {t.featured && <div className="kicker text-gold mb-3">Most Popular</div>}
                 <h3 className="font-serif text-3xl md:text-4xl">{t.name}</h3>
                 <div className="mt-3 text-cream/60 text-sm tracking-[0.18em] uppercase">{t.price}</div>
                 <div className="my-8 hairline text-cream" />
@@ -225,25 +228,29 @@ function HomePage() {
                       : "border border-cream/30 hover:bg-cream hover:text-charcoal"
                   }`}
                 >
-                  Inquire
+                  Learn More
                 </Link>
               </div>
             ))}
           </div>
+          <p className="reveal mt-10 text-center text-cream/55 text-sm max-w-2xl mx-auto">
+            The Prepaid Elite program is at capacity for the 2026 season. A
+            waiting list will open in the fall for the 2027 season.
+          </p>
         </div>
       </section>
 
-      {/* EVENTS & WEDDINGS */}
+      {/* EVENTS & RICHVALE ROOM */}
       <section className="bg-cream py-28 md:py-40">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-12 lg:gap-20 lg:grid-cols-2 items-center">
           <div className="reveal relative aspect-[4/5] overflow-hidden">
-            <img src={eventsImg} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover scale-105 hover:scale-110 transition-transform duration-[1600ms]" />
+            <img src={eventsImg} alt="The Richvale Room at Richmond Hill Golf Club" loading="lazy" className="absolute inset-0 h-full w-full object-cover scale-105 hover:scale-110 transition-transform duration-[1600ms]" />
           </div>
           <div>
             <SectionHeading
               kicker="Weddings & Private Events"
-              title="A pavilion designed for the most cinematic light of the day."
-              intro="Hosting up to 220 guests across the pavilion, terrace and the 9th-fairway lawn. Sit-down dinners, cocktail receptions and corporate retreats."
+              title="The Richvale Room — vaulted, light-filled, up to 200 guests."
+              intro="A 60-foot section of windows overlooks the forest and ravine. Custom menus, audio/visual equipment, dance floor and a partition wall for smaller, more intimate functions."
             />
             <div className="reveal mt-10 grid grid-cols-3 gap-3">
               {[diningImg, eventsImg, tournamentImg].map((src, i) => (
@@ -279,7 +286,9 @@ function HomePage() {
             Some mornings ask to be played.
           </h2>
           <a
-            href="#book"
+            href="https://richmond-hill-golf.book.teeitup.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="reveal mt-12 inline-flex items-center gap-3 bg-cream text-charcoal px-8 py-4 text-xs tracking-[0.24em] uppercase hover:bg-gold transition-colors"
           >
             Book Tee Time
