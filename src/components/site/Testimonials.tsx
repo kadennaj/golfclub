@@ -3,21 +3,21 @@ import { useEffect, useState } from "react";
 const ITEMS = [
   {
     quote:
-      "A heritage course that finally feels like the destination it's always been. Every visit feels considered — from the first tee to the last pour.",
-    name: "Daniel Whitford",
-    role: "Member since 2014",
+      "I would like to thank the whole team at Richmond Hill Golf Club for a first class event — the service was amazing from the proshop to the food and beverage to the grounds staff. I have been involved in running tournaments for thirty years and have not seen this service quality from a golf event to date.",
+    name: "Mike Butler",
+    role: "Symtech",
   },
   {
     quote:
-      "We held our wedding here in September. The light, the views, the service — guests are still talking about it.",
-    name: "Aisha & Marc",
-    role: "Pavilion Wedding",
+      "Seldom does one see a truly honest effort to cater an event, and you have certainly shown true professionalism in delivering what you promised. The golf course is well groomed and has become one of my choices to play a round!",
+    name: "Guy Schembri",
+    role: "Local 416",
   },
   {
     quote:
-      "The best parkland golf within an hour of Toronto. Conditioning is immaculate and the front nine is unforgettable.",
-    name: "Jonathan P.",
-    role: "Visiting Player",
+      "Once again you have shown us a great tournament. You have always gone above and beyond for us and this makes our decision to come back year after year easy. Your job and execution on tournament day is flawless!",
+    name: "Agnes Caplan",
+    role: "TBMOA",
   },
 ];
 
