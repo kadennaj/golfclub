@@ -58,7 +58,9 @@ export function Nav() {
 
           <div className="flex items-center gap-3">
             <a
-              href="#book"
+              href="https://richmond-hill-golf.book.teeitup.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-[0.72rem] tracking-[0.24em] uppercase border border-cream/40 hover:bg-cream hover:text-charcoal transition-all duration-300"
             >
               Book Tee Time
@@ -99,7 +101,9 @@ export function Nav() {
             </Link>
           ))}
           <a
-            href="#book"
+            href="https://richmond-hill-golf.book.teeitup.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="mt-8 inline-flex justify-center items-center px-6 py-4 text-xs tracking-[0.24em] uppercase bg-gold text-charcoal hover:bg-cream transition-colors"
           >

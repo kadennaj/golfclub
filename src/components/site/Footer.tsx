@@ -8,7 +8,7 @@ export function Footer() {
       <div className="aspect-[16/6] md:aspect-[21/6] w-full overflow-hidden border-y border-white/5">
         <iframe
           title="Map to Richmond Hill Golf Club"
-          src="https://www.google.com/maps?q=Richmond+Hill+Golf+%26+Country+Club&output=embed"
+          src="https://www.google.com/maps?q=8755+Bathurst+Street+Richmond+Hill+ON&output=embed"
           loading="lazy"
           className="w-full h-full grayscale-[0.6] contrast-110 opacity-90"
         />
@@ -18,9 +18,14 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-6 text-sm leading-relaxed max-w-sm text-cream/65">
-            Toronto's premier public golf experience. Established 1958. A heritage
-            parkland course minutes from the city.
+            A fully public 18-hole parkland course in Richmond Hill, Ontario. Tee
+            times, lessons, simulators, tournaments and the Richvale Room — open
+            to everyone.
           </p>
+          <div className="mt-6 text-sm text-cream/65 space-y-1">
+            <div>8755 Bathurst Street, Richmond Hill, ON L4C 9T3</div>
+            <div>(905) 889-4653</div>
+          </div>
           <div className="mt-6 flex gap-3">
             {[Instagram, Facebook, Youtube].map((Icon, i) => (
               <a
@@ -73,7 +78,7 @@ export function Footer() {
       <div className="border-t border-white/5">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 py-6 flex flex-wrap gap-3 justify-between text-[0.7rem] tracking-[0.18em] uppercase text-cream/45">
           <div>© {new Date().getFullYear()} Richmond Hill Golf Club</div>
-          <div>Stouffville Road · Richmond Hill, Ontario</div>
+          <div>8755 Bathurst Street · Richmond Hill, Ontario</div>
         </div>
       </div>
     </footer>
