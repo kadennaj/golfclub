@@ -24,7 +24,14 @@ export function Footer() {
           </p>
           <div className="mt-6 text-sm text-cream/65 space-y-1">
             <div>8755 Bathurst Street, Richmond Hill, ON L4C 9T3</div>
-            <div>(905) 889-4653</div>
+            <div>
+              <a href="tel:9058894653" className="hover:text-gold transition-colors">(905) 889-4653</a>
+            </div>
+            <div className="pt-3 space-y-1 text-cream/55">
+              <div>Lessons · ext. 448 · <a href="mailto:learningcentre@richmondhillgolf.com" className="hover:text-gold transition-colors">learningcentre@richmondhillgolf.com</a></div>
+              <div>Events · <a href="mailto:lbodanis@richmondhillgolf.com" className="hover:text-gold transition-colors">lbodanis@richmondhillgolf.com</a></div>
+              <div>Employment · ext. 422 · <a href="mailto:dyoung@richmondhillgolf.com" className="hover:text-gold transition-colors">dyoung@richmondhillgolf.com</a></div>
+            </div>
           </div>
           <div className="mt-6 flex gap-3">
             {[Instagram, Facebook, Youtube].map((Icon, i) => (
