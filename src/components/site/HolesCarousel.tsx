@@ -2,6 +2,7 @@ type Hole = {
   number: string;
   par: string;
   yardage: string;
+  hdcp?: string;
   name: string;
   description: string;
   image: string;
@@ -32,12 +33,12 @@ export function HolesCarousel({ holes }: { holes: Hole[] }) {
               <div className="text-right text-xs tracking-[0.2em] uppercase text-cream/75 mt-2">
                 <div>Par {h.par}</div>
                 <div className="mt-1">{h.yardage} yd</div>
+                {h.hdcp && <div className="mt-1">HDCP {h.hdcp}</div>}
               </div>
             </div>
             <div className="absolute bottom-0 inset-x-0 p-6 md:p-8">
-              <div className="kicker text-gold mb-2">Signature</div>
-              <h3 className="font-serif text-2xl md:text-3xl leading-tight">{h.name}</h3>
-              <p className="mt-2 text-sm text-cream/70 max-w-[34ch] opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+              <div className="kicker text-gold mb-2">{h.name}</div>
+              <p className="mt-2 text-sm text-cream/80 max-w-[40ch] leading-relaxed">
                 {h.description}
               </p>
             </div>
