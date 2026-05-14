@@ -26,7 +26,7 @@ function EventsPage() {
         kicker="Events & Tournaments"
         title="Inquire about your 2026 event now."
         intro="The Richmond Hill Golf Club offers a unique set of services and amenities — making it an ideal choice for your corporate or charitable event."
-        videoId="wsBTFZQ2rd0"
+        videoSrc="/videos/hole-5.mp4"
         poster={eventsImg}
       />
 

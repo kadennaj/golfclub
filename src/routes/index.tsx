@@ -37,7 +37,7 @@ function HomePage() {
     <>
       {/* HERO */}
       <section className="relative min-h-[100svh] overflow-hidden bg-charcoal text-cream">
-        <HeroVideo videoId="6QR2QCSkXnI" poster={heroPoster} />
+        <HeroVideo src="/videos/hole-1.mp4" poster={heroPoster} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-transparent to-transparent" />
 
@@ -159,7 +159,7 @@ function HomePage() {
       {/* SIGNATURE HOLES */}
       <section className="relative bg-charcoal text-cream py-28 md:py-40 overflow-hidden">
         <div className="absolute inset-0 opacity-25">
-          <HeroVideo videoId="wsBTFZQ2rd0" poster={hole4} />
+          <HeroVideo src="/videos/hole-5.mp4" poster={hole4} />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/70 to-charcoal" />
         </div>
         <div className="relative z-10 mx-auto max-w-[1480px] px-5 md:px-10">
@@ -278,7 +278,7 @@ function HomePage() {
 
       {/* FINAL CTA */}
       <section className="relative h-[80svh] min-h-[560px] overflow-hidden bg-charcoal text-cream">
-        <HeroVideo videoId="nadhgQrHMDc" poster={hole3} />
+        <HeroVideo src="/videos/hole-18.mp4" poster={hole3} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/70" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-5">
           <div className="reveal kicker text-gold mb-6">Reserve Your Round</div>

@@ -36,7 +36,7 @@ function GolfPage() {
         kicker="The Course"
         title="Eighteen holes of public parkland golf."
         intro="A walkable course with three tee decks, par 70 — challenging for advanced players and friendly for beginners. Open to everyone, seven days a week."
-        videoId="6QR2QCSkXnI"
+        videoSrc="/videos/hole-1.mp4"
         poster={golfImg}
       />
 

@@ -34,7 +34,7 @@ function LessonsPage() {
         kicker="Academy"
         title="Get your game in shape for the new season."
         intro="The Richmond Hill Golf Academy offers private, semi-private, on-course, group, junior camps, clinics and corporate outings — all available year-round."
-        videoId="zkKFWa2x9DI"
+        videoSrc="/videos/hole-13.mp4"
         poster={lessonsImg}
       />
 
