@@ -76,7 +76,7 @@ function GolfPage() {
 
       <section className="bg-charcoal text-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 mb-16">
-          <SectionHeading tone="dark" kicker="Signature Holes" title="Four holes that ask for your best." />
+          <SectionHeading tone="dark" kicker="Hole-by-Hole" title="A walk through all eighteen." intro="Every hole on the course — par, yardage, handicap and a note on how to play it." />
         </div>
         <div className="mx-auto max-w-[1480px]">
           <HolesCarousel holes={HOLES} />
