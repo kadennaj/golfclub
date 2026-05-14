@@ -62,7 +62,7 @@ export function HeroVideo({ src, poster, className = "" }: Props) {
           controlsList="nodownload nofullscreen noremoteplayback"
           tabIndex={-1}
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover scale-110 origin-center pointer-events-none select-none"
+          className="absolute inset-0 h-full w-full object-cover scale-[1.6] origin-center pointer-events-none select-none"
         />
       )}
     </div>
