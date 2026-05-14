@@ -30,7 +30,7 @@ function MembershipPage() {
         kicker="Prepaid Elite"
         title="The ultimate in convenience and savings."
         intro="As a fully public Golf Club we don't offer traditional memberships. Our Prepaid Elite program lets you put a lump sum on account, then draw from it at a discounted rate. Funds never expire for 3 years, and discounts apply automatically."
-        videoId="zkKFWa2x9DI"
+        videoSrc="/videos/hole-13.mp4"
         poster={poster}
       />
 

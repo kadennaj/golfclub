@@ -20,7 +20,7 @@ function ContactPage() {
   useReveal();
   return (
     <>
-      <PageHero kicker="Contact" title="Visit, call, or send a note." intro="We respond personally — usually within the day." videoId="nadhgQrHMDc" poster={poster} />
+      <PageHero kicker="Contact" title="Visit, call, or send a note." intro="We respond personally — usually within the day." videoSrc="/videos/hole-18.mp4" poster={poster} />
 
       <section className="bg-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-16 lg:grid-cols-2">

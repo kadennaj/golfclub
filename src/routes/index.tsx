@@ -24,12 +24,35 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
+const HOLE_IMAGES = [hole1, hole2, hole3, hole4];
 const HOLES = [
-  { number: "01", par: "4", yardage: "408", name: "Opener", description: "A tough opening hole featuring a sharp dogleg left. An aggressive drive around the corner is rewarded with a short approach to a two-tiered green.", image: hole1 },
-  { number: "05", par: "4", yardage: "389", name: "The Carry", description: "Play to the 150 stake for safety, or be aggressive and carry the water on the right. A wide but sharply two-tiered green awaits.", image: hole2 },
-  { number: "11", par: "4", yardage: "393", name: "The Chute", description: "A notorious tee shot, steeply downhill through a narrow chute of trees to a small landing area sloping right to left.", image: hole3 },
-  { number: "18", par: "5", yardage: "495", name: "The Finish", description: "Rounds are made or ruined here. Choose your 200-yard club off the tee and lay up to 100 for the best chance of par or birdie.", image: hole4 },
-];
+  { n: "01", par: "4", yd: "408", hdcp: "4", name: "Opening Dogleg", desc: "A tough opening hole featuring a sharp dogleg left. An aggressive drive around the corner is rewarded with a short approach to a two-tiered green." },
+  { n: "02", par: "4", yd: "340", hdcp: "12", name: "Narrow Par 4", desc: "A short but narrow par 4. Hitting your tee shot in the fairway is critical — favour the right side for a clear look at a long, narrow green guarded by two bunkers." },
+  { n: "03", par: "5", yd: "517", hdcp: "16", name: "Reachable Par 5", desc: "A great chance for birdie — reachable in two after a good drive down the left side. Be careful not to go long with your approach." },
+  { n: "04", par: "3", yd: "164", hdcp: "18", name: "Short & Tricky", desc: "A short but very difficult par 3. Out of bounds right and long, lateral hazard left — the best miss is short of this two-tiered green." },
+  { n: "05", par: "4", yd: "389", hdcp: "2", name: "The Carry", desc: "Play to the 150 stake for safety, or be aggressive and carry the water on the right. A wide but sharply two-tiered green awaits." },
+  { n: "06", par: "4", yd: "330", hdcp: "14", name: "Sloped Green", desc: "After an ideal tee shot of 200 yards down the right side, pay careful attention to the pin location on this very large and sloped green." },
+  { n: "07", par: "3", yd: "195", hdcp: "6", name: "Long Par 3", desc: "Wind often plays a part on this long par 3. Safest misses are short and right; the green has front, middle and back tiers." },
+  { n: "08", par: "4", yd: "359", hdcp: "8", name: "Water Left", desc: "Right-centre of the fairway, short of the far bunker, is the ideal target. The approach is difficult with water left and fescue right." },
+  { n: "09", par: "3", yd: "166", hdcp: "10", name: "Over Water", desc: "The outward nine ends with a challenging par 3 over water. Favour the left side — par is a great score here." },
+  { n: "10", par: "5", yd: "538", hdcp: "11", name: "Long Par 5", desc: "Downwind this long par 5 can be reached in two; into the wind it becomes a beast. Favour the left side off the tee and on approach." },
+  { n: "11", par: "4", yd: "393", hdcp: "1", name: "The Chute", desc: "A notorious tee shot, steeply downhill through a narrow chute of trees to a small landing area sloping right to left." },
+  { n: "12", par: "4", yd: "327", hdcp: "9", name: "Pond Carry", desc: "More room left than appears off the tee — choose a shorter club to stay in front of the pond. Distance control is key on approach." },
+  { n: "13", par: "3", yd: "165", hdcp: "15", name: "Elevated Tee", desc: "Club selection is the biggest challenge on this short par 3 with an elevated tee deck. Hazards guard all sides — little margin for error." },
+  { n: "14", par: "4", yd: "406", hdcp: "7", name: "Three-Tier Green", desc: "Getting the ball in the fairway is key. Favour the left side off the tee to open a better angle into a small, three-tiered green." },
+  { n: "15", par: "4", yd: "330", hdcp: "13", name: "Drivable Risk-Reward", desc: "A drivable par 4 with great risk-reward — but you can still make birdie by laying up safely on the left side of the fairway." },
+  { n: "16", par: "4", yd: "319", hdcp: "17", name: "Drivable Dogleg", desc: "Another drivable par 4. The green is less accessible from the tee and asks for a left-to-right shot. Short is a good miss on approach." },
+  { n: "17", par: "3", yd: "163", hdcp: "5", name: "Nerve Test", desc: "The last par 3 on the course will test your nerves. The only safe miss is left — creek and brush right, and wind is often a factor." },
+  { n: "18", par: "5", yd: "495", hdcp: "3", name: "Make or Ruin", desc: "Rounds are made or ruined on this difficult finishing hole. Choose your 200-yard club off the tee and lay up to 100 yards." },
+].map((h, i) => ({
+  number: h.n,
+  par: h.par,
+  yardage: h.yd,
+  hdcp: h.hdcp,
+  name: h.name,
+  description: h.desc,
+  image: HOLE_IMAGES[i % HOLE_IMAGES.length],
+}));
 
 function HomePage() {
   useReveal();
@@ -37,7 +60,7 @@ function HomePage() {
     <>
       {/* HERO */}
       <section className="relative min-h-[100svh] overflow-hidden bg-charcoal text-cream">
-        <HeroVideo videoId="6QR2QCSkXnI" poster={heroPoster} />
+        <HeroVideo src="/videos/hole-1.mp4" poster={heroPoster} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-transparent to-transparent" />
 
@@ -159,15 +182,15 @@ function HomePage() {
       {/* SIGNATURE HOLES */}
       <section className="relative bg-charcoal text-cream py-28 md:py-40 overflow-hidden">
         <div className="absolute inset-0 opacity-25">
-          <HeroVideo videoId="wsBTFZQ2rd0" poster={hole4} />
+          <HeroVideo src="/videos/hole-5.mp4" poster={hole4} />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/70 to-charcoal" />
         </div>
         <div className="relative z-10 mx-auto max-w-[1480px] px-5 md:px-10">
           <SectionHeading
             tone="dark"
-            kicker="Signature Holes"
-            title="Four holes that tell the story of the course."
-            intro="From a sharp dogleg opener to a finishing par 5 that has decided more matches than we can count."
+            kicker="Hole-by-Hole"
+            title="A walk through all eighteen."
+            intro="Every hole on the course — par, yardage, handicap and a note on how to play it. Scroll through to tour the round before you tee off."
             className="mb-16"
           />
         </div>
@@ -278,7 +301,7 @@ function HomePage() {
 
       {/* FINAL CTA */}
       <section className="relative h-[80svh] min-h-[560px] overflow-hidden bg-charcoal text-cream">
-        <HeroVideo videoId="nadhgQrHMDc" poster={hole3} />
+        <HeroVideo src="/videos/hole-18.mp4" poster={hole3} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/70" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-5">
           <div className="reveal kicker text-gold mb-6">Reserve Your Round</div>

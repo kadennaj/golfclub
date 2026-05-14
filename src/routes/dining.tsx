@@ -24,7 +24,7 @@ function DiningPage() {
         kicker="Dining"
         title="The 19th Hole Lounge."
         intro="A full selection of popular menu items and beverages in our newly renovated lounge — the perfect place to sit and relax after a round."
-        videoId="nadhgQrHMDc"
+        videoSrc="/videos/hole-18.mp4"
         poster={diningImg}
       />
 
