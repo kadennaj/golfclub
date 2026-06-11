@@ -1,18 +1,20 @@
-type Props = { className?: string; tone?: "light" | "dark" };
+import rhgcLogo from "../../assets/brand/rhgc-logo.png";
+import academyLogo from "../../assets/brand/academy-logo.png";
 
-export function Logo({ className = "", tone = "light" }: Props) {
-  const stroke = tone === "light" ? "currentColor" : "currentColor";
+type Props = { className?: string; tone?: "light" | "dark"; variant?: "club" | "academy" };
+
+export function Logo({ className = "", tone = "light", variant = "club" }: Props) {
+  const filter = tone === "light" ? "brightness(0) invert(1)" : "none";
+  const src = variant === "academy" ? academyLogo : rhgcLogo;
+  const alt = variant === "academy" ? "Richmond Hill Golf Academy" : "Richmond Hill Golf Club";
+  const size = variant === "academy" ? "h-14" : "h-11";
+
   return (
-    <div className={`flex items-center gap-2.5 ${className}`} aria-label="Richmond Hill Golf Club">
-      <svg viewBox="0 0 40 40" className="h-9 w-9" fill="none" stroke={stroke} strokeWidth={1.2}>
-        <circle cx="20" cy="20" r="18.5" />
-        <path d="M20 6 v18 M20 24 l9 -5 -9 -5" strokeLinejoin="round" strokeLinecap="round" />
-        <circle cx="20" cy="32" r="1.6" fill="currentColor" stroke="none" />
-      </svg>
-      <div className="leading-[0.95] font-serif">
-        <div className="text-[0.95rem] tracking-[0.18em] uppercase">Richmond Hill</div>
-        <div className="text-[0.62rem] tracking-[0.42em] uppercase opacity-80">Golf Club</div>
-      </div>
-    </div>
+    <img
+      src={src}
+      alt={alt}
+      className={`${size} w-auto object-contain ${className}`}
+      style={{ filter }}
+    />
   );
 }

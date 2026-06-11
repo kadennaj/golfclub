@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "../hooks/use-reveal";
 import { PageHero } from "../components/site/PageHero";
 import { SectionHeading } from "../components/site/SectionHeading";
-import poster from "../assets/golf-green.jpg";
+import { HOLES } from "../data/holes";
 
 export const Route = createFileRoute("/membership")({
   head: () => ({
@@ -30,8 +30,7 @@ function MembershipPage() {
         kicker="Prepaid Elite"
         title="The ultimate in convenience and savings."
         intro="As a fully public Golf Club we don't offer traditional memberships. Our Prepaid Elite program lets you put a lump sum on account, then draw from it at a discounted rate. Funds never expire for 3 years, and discounts apply automatically."
-        videoSrc="/videos/hole-13.mp4"
-        poster={poster}
+        poster={HOLES[9].image}
       />
 
       <section className="bg-charcoal text-cream py-28 md:py-36">

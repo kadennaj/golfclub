@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
@@ -6,15 +6,16 @@ import { Logo } from "./Logo";
 const NAV = [
   { to: "/golf", label: "Golf" },
   { to: "/membership", label: "Membership" },
-  { to: "/events", label: "Events" },
-  { to: "/dining", label: "Dining" },
+  { to: "/events", label: "Events & Dining" },
   { to: "/lessons", label: "Academy" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
 export function Nav() {
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const logoVariant = location.pathname.startsWith("/lessons") ? "academy" : "club";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -39,7 +40,7 @@ export function Nav() {
       >
         <div className="mx-auto flex h-20 max-w-[1480px] items-center justify-between px-5 md:px-10 text-cream">
           <Link to="/" className="hover:opacity-80 transition-opacity">
-            <Logo />
+            <Logo variant={logoVariant} />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-9">
@@ -61,13 +62,13 @@ export function Nav() {
               href="https://richmond-hill-golf.book.teeitup.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-[0.72rem] tracking-[0.24em] uppercase border border-cream/40 hover:bg-cream hover:text-charcoal transition-all duration-300"
+              className="hidden sm:inline-flex cursor-pointer items-center gap-2 px-5 py-2.5 text-[0.72rem] tracking-[0.24em] uppercase border border-cream/40 hover:bg-cream hover:text-charcoal transition-all duration-300"
             >
               Book Tee Time
             </a>
             <button
               onClick={() => setOpen(true)}
-              className="lg:hidden p-2 -mr-2 hover:opacity-80"
+              className="lg:hidden cursor-pointer p-2 -mr-2 hover:opacity-80"
               aria-label="Open menu"
             >
               <Menu className="h-6 w-6" />
@@ -83,8 +84,8 @@ export function Nav() {
         }`}
       >
         <div className="flex h-20 items-center justify-between px-5">
-          <Logo />
-          <button onClick={() => setOpen(false)} aria-label="Close menu" className="p-2 -mr-2">
+          <Logo variant={logoVariant} />
+          <button onClick={() => setOpen(false)} aria-label="Close menu" className="cursor-pointer p-2 -mr-2">
             <X className="h-6 w-6" />
           </button>
         </div>
@@ -105,7 +106,7 @@ export function Nav() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="mt-8 inline-flex justify-center items-center px-6 py-4 text-xs tracking-[0.24em] uppercase bg-gold text-charcoal hover:bg-cream transition-colors"
+            className="mt-8 inline-flex cursor-pointer justify-center items-center px-6 py-4 text-xs tracking-[0.24em] uppercase bg-gold text-charcoal hover:bg-cream transition-colors"
           >
             Book Tee Time
           </a>

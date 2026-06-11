@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useReveal } from "../hooks/use-reveal";
 import { PageHero } from "../components/site/PageHero";
-import { Mail, Phone, MapPin, Calendar, Smartphone, Users } from "lucide-react";
-import poster from "../assets/hero-aerial.jpg";
+import { Mail, Phone, MapPin, Calendar, Smartphone, Users, FileText } from "lucide-react";
+import { HOLES } from "../data/holes";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -17,10 +17,32 @@ export const Route = createFileRoute("/contact")({
 });
 
 const DEPARTMENTS: { dept: string; phone?: string; email?: string; note?: string }[] = [
-  { dept: "Proshop & Tee Times", phone: "(905) 889-4653", note: "Bookings up to 4 weeks in advance, 7 days a week." },
+  { dept: "Proshop & General Inquiries", phone: "(905) 889-4653 ext. 422", email: "info@richmondhillgolf.com", note: "Contact the Proshop for general inquiries." },
+  { dept: "Tee Times", phone: "(905) 889-4653", note: "Bookings up to 4 weeks in advance by phone or online." },
   { dept: "Golf Learning Centre / Lessons", phone: "(905) 889-4653 ext. 448", email: "learningcentre@richmondhillgolf.com" },
-  { dept: "Events & Tournaments", email: "lbodanis@richmondhillgolf.com", note: "Lori Bodanis — Event Manager" },
+  { dept: "Events & Tournaments", phone: "(905) 889-4653 ext. 425", email: "lbodanis@richmondhillgolf.com", note: "Lorie Bodanis — Event Manager" },
   { dept: "Employment", phone: "(905) 889-4653 ext. 422", email: "dyoung@richmondhillgolf.com", note: "Doug Young — Club Director" },
+  { dept: "Turf Maintenance", phone: "(905) 731-7541", note: "Maintenance department direct line." },
+];
+
+const TEAM_CONTACTS = [
+  { name: "Doug Young", title: "Club Director", ext: "413", email: "dyoung@richmondhillgolf.com" },
+  { name: "Paul Davies", title: "Head Professional", ext: "417", email: "pdavies@richmondhillgolf.com" },
+  { name: "Lorie Bodanis", title: "Event Manager", ext: "425", email: "lbodanis@richmondhillgolf.com" },
+  { name: "Samantha Cooper", title: "Front of House F&B Manager", ext: "410", email: "scooper@richmondhillgolf.com" },
+  { name: "Mena Torrice", title: "Banquet Manager", email: "mtorrice@richmondhillgolf.com" },
+  { name: "David Rogers", title: "Associate Professional", ext: "451", email: "drogers@richmondhillgolf.com" },
+  { name: "Joel Rodgers", title: "Member Services & Marketing Manager", ext: "412", email: "jrodgers@richmondhillgolf.com" },
+];
+
+const TURF_CONTACTS = [
+  { name: "Peter Barnett", title: "Superintendent", ext: "21", email: "pbarnett@richmondhillgolf.com" },
+  { name: "Koree Wait", title: "Assistant Superintendent", ext: "22", email: "kwait@richmondhillgolf.com" },
+];
+
+const POLICIES = [
+  { label: "Accessibility Policy", href: "https://www.richmondhillgolf.com/wp-content/uploads/2019/03/aoda-company-policy-2018.pdf" },
+  { label: "Privacy Policy", href: "https://www.richmondhillgolf.com/wp-content/uploads/2021/04/rhgc-privacy-policy.pdf" },
 ];
 
 function ContactPage() {
@@ -31,8 +53,7 @@ function ContactPage() {
         kicker="Contact"
         title="Visit, call, or send a note."
         intro="We respond personally — usually within the day. Reach the right department directly below."
-        videoSrc="/videos/hole-18.mp4"
-        poster={poster}
+        poster={HOLES[17].image}
       />
 
       <section className="bg-cream py-28 md:py-36">
@@ -41,6 +62,7 @@ function ContactPage() {
             {[
               { Icon: MapPin, k: "Visit", l: "8755 Bathurst Street\nRichmond Hill, ON L4C 9T3" },
               { Icon: Phone, k: "Main Line", l: "(905) 889-4653" },
+              { Icon: Mail, k: "General Inquiries", l: "info@richmondhillgolf.com\nProshop ext. 422" },
               { Icon: Calendar, k: "Book a Tee Time", l: "richmond-hill-golf.book.teeitup.com" },
             ].map(({ Icon, k, l }) => (
               <div key={k} className="reveal flex gap-5">
@@ -77,7 +99,7 @@ function ContactPage() {
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
           <div className="kicker text-gold mb-4">Departments</div>
           <h2 className="font-serif text-4xl md:text-6xl max-w-3xl text-balance mb-16">Reach the right team directly.</h2>
-          <div className="grid gap-10 md:grid-cols-2">
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {DEPARTMENTS.map((d) => (
               <div key={d.dept} className="reveal border-t border-cream/15 pt-6">
                 <div className="font-serif text-2xl mb-3">{d.dept}</div>
@@ -99,6 +121,53 @@ function ContactPage() {
       </section>
 
       <section className="bg-cream py-28 md:py-36">
+        <div className="mx-auto max-w-[1480px] px-5 md:px-10">
+          <div className="grid gap-14 lg:grid-cols-[1fr_0.72fr]">
+            <div>
+              <div className="kicker text-forest mb-4">Our Team</div>
+              <h2 className="font-serif text-4xl md:text-6xl text-charcoal mb-14 max-w-3xl text-balance">Current staff contacts.</h2>
+              <div className="grid gap-x-8 gap-y-8 md:grid-cols-2">
+                {TEAM_CONTACTS.map((person) => (
+                  <div key={person.email} className="reveal border-t border-charcoal/15 pt-5">
+                    <div className="font-serif text-2xl text-charcoal">{person.name}</div>
+                    <div className="mt-1 text-sm text-charcoal/60">{person.title}{person.ext ? ` - Ext. ${person.ext}` : ""}</div>
+                    <a href={`mailto:${person.email}`} className="mt-3 inline-block text-sm text-forest hover:text-charcoal transition-colors">{person.email}</a>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-14">
+              <div>
+                <div className="kicker text-forest mb-4">Turf Maintenance</div>
+                <div className="font-serif text-3xl text-charcoal">(905) 731-7541</div>
+                <div className="mt-8 space-y-6">
+                  {TURF_CONTACTS.map((person) => (
+                    <div key={person.email} className="reveal border-t border-charcoal/15 pt-5">
+                      <div className="font-serif text-2xl text-charcoal">{person.name}</div>
+                      <div className="mt-1 text-sm text-charcoal/60">{person.title} - Ext. {person.ext}</div>
+                      <a href={`mailto:${person.email}`} className="mt-3 inline-block text-sm text-forest hover:text-charcoal transition-colors">{person.email}</a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="reveal border-t border-charcoal/15 pt-6">
+                <div className="kicker text-forest mb-4 flex items-center gap-2"><FileText className="h-4 w-4" /> Policies</div>
+                <div className="flex flex-col gap-3">
+                  {POLICIES.map((policy) => (
+                    <a key={policy.href} href={policy.href} target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.24em] uppercase border-b border-charcoal/30 pb-2 hover:text-forest transition-colors">
+                      {policy.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-12 lg:grid-cols-2">
           <div className="reveal">
             <div className="kicker text-forest mb-4 flex items-center gap-2"><Smartphone className="h-4 w-4" /> Mobile App</div>
@@ -107,8 +176,8 @@ function ContactPage() {
               Interactive scorecard, GPS yardage, virtual hole flyovers, live leaderboards, tee-time booking, F&amp;B menu, news and monthly challenges — all in your pocket.
             </p>
             <div className="flex gap-4">
-              <a href="https://itunes.apple.com/us/app/richmond-hill-golf/id1244279127" target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.24em] uppercase border-b border-charcoal pb-1 hover:text-forest transition-colors">Download iOS</a>
-              <a href="https://play.google.com/store/apps/details?id=com.gallusgolf.c862.android.richmondhill" target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.24em] uppercase border-b border-charcoal pb-1 hover:text-forest transition-colors">Download Android</a>
+              <span className="text-xs tracking-[0.24em] uppercase border-b border-charcoal/30 pb-1 text-charcoal/55">iOS Coming Soon</span>
+              <span className="text-xs tracking-[0.24em] uppercase border-b border-charcoal/30 pb-1 text-charcoal/55">Android Coming Soon</span>
             </div>
           </div>
 

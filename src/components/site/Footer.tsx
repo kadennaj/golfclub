@@ -51,7 +51,7 @@ export function Footer() {
           title="Visit"
           items={[
             ["Course", "/golf"],
-            ["Dining", "/dining"],
+            ["Events & Dining", "/events"],
             ["Contact", "/contact"],
           ]}
         />
@@ -60,7 +60,7 @@ export function Footer() {
           items={[
             ["Membership", "/membership"],
             ["Academy", "/lessons"],
-            ["Events", "/events"],
+            ["Tournaments", "/events"],
           ]}
         />
         <div>

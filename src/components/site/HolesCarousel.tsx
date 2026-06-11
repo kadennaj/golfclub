@@ -10,7 +10,7 @@ type Hole = {
 
 export function HolesCarousel({ holes }: { holes: Hole[] }) {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <div className="flex gap-5 md:gap-7 overflow-x-auto snap-x snap-mandatory pb-8 px-5 md:px-10 -mx-5 md:-mx-10 scroll-smooth [scrollbar-width:thin]">
         {holes.map((h) => (
           <article

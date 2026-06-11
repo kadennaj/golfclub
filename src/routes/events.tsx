@@ -2,9 +2,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "../hooks/use-reveal";
 import { PageHero } from "../components/site/PageHero";
 import { SectionHeading } from "../components/site/SectionHeading";
-import eventsImg from "../assets/events.jpg";
-import diningImg from "../assets/dining.jpg";
-import tournamentImg from "../assets/tournament.jpg";
+import eventGolf01 from "../assets/events-real/event-golf-01.jpg";
+import eventGolf02 from "../assets/events-real/event-golf-02.jpg";
+import eventGolf03 from "../assets/events-real/event-golf-03.jpg";
+import eventGolf04 from "../assets/events-real/event-golf-04.jpg";
+import eventDinner01 from "../assets/events-real/event-dinner-01.jpg";
+import eventDinner02 from "../assets/events-real/event-dinner-02.jpg";
+import eventDinner03 from "../assets/events-real/event-dinner-03.jpg";
+import eventDinner04 from "../assets/events-real/event-dinner-04.jpg";
 
 export const Route = createFileRoute("/events")({
   head: () => ({
@@ -23,11 +28,10 @@ function EventsPage() {
   return (
     <>
       <PageHero
-        kicker="Events & Tournaments"
-        title="Inquire about your 2026 event now."
-        intro="The Richmond Hill Golf Club offers a unique set of services and amenities — making it an ideal choice for your corporate or charitable event."
-        videoSrc="/videos/hole-5.mp4"
-        poster={eventsImg}
+        kicker="Events & Dining"
+        title="Tournament days. Dinner nights. Celebrations."
+        intro="Real hospitality, from the first tee to the final toast."
+        poster={eventGolf01}
       />
 
       {/* Stats strip */}
@@ -49,13 +53,13 @@ function EventsPage() {
       {/* How we help */}
       <section className="bg-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
-          <SectionHeading kicker="Our Staff Are Here To Help" title="From first call to follow-up." className="mb-14" />
+          <SectionHeading kicker="Our Staff Are Here To Help" title="From first call to follow-up." intro="Planning stays simple, service stays close, and the room feels ready when guests arrive." className="mb-14" />
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Pre-Planning", "We help you find your ideal tournament date and plan the type and scale of event that's right for you."],
-              ["Details", "We guide you through choosing golf formats, logo merchandise, hole-in-one contests, food and beverage options and more."],
-              ["Event Day", "Our staff will be at your side all day ensuring everything runs smoothly and your guests are happy."],
-              ["Follow Up", "We talk with you after your event to gather feedback and help plan your next one."],
+              ["Pre-Planning", "Choose the date, format, room setup and menu with a team that knows the flow."],
+              ["Tournament Golf", "Bag drop, scoring, contests, carts, sponsor signs and guest movement handled cleanly."],
+              ["Dining", "The 19th Hole, patios and Richvale Room support everything from lunches to banquets."],
+              ["Event Day", "Staff stay close so your guests can settle in and enjoy the day."],
             ].map(([t, d]) => (
               <div key={t} className="reveal border-t border-charcoal/15 pt-6">
                 <div className="kicker text-forest mb-3">{t}</div>
@@ -66,13 +70,14 @@ function EventsPage() {
         </div>
       </section>
 
-      {/* Three offerings */}
+      {/* Combined offerings */}
       <section className="bg-cream pb-28 md:pb-36">
-        <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-16 lg:grid-cols-3">
+        <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-16 lg:grid-cols-4">
           {[
-            { img: tournamentImg, k: "Tournaments", t: "Shotgun, scramble or stroke.", d: "Bag drop, custom yardage guides, scoring & contest hole set-up, GPS-enabled cart fleet, sponsor signs and full-service hospitality." },
-            { img: eventsImg, k: "The Richvale Room", t: "Up to 200 guests in vaulted, light-filled space.", d: "60-foot section of windows overlooking forest and ravine. Custom menus, audio/visual, dance floor and a partition wall for smaller functions." },
-            { img: diningImg, k: "Corporate", t: "Meetings, off-sites and holiday parties.", d: "From boardroom-scale lunches to full company days — paired with golf, simulator bays or just the patio overlooking the 18th." },
+            { img: eventGolf02, k: "Tournaments", t: "Shotgun, scramble or stroke.", d: "A smooth tournament day with scoring, contests, carts, sponsor signs and hospitality." },
+            { img: eventDinner01, k: "The Richvale Room", t: "Up to 200 guests.", d: "A vaulted, light-filled room for weddings, banquets, meetings and private celebrations." },
+            { img: eventDinner03, k: "Dining", t: "The 19th Hole and patios.", d: "A relaxed post-round setting for meals, drinks and smaller group gatherings." },
+            { img: eventGolf04, k: "Corporate", t: "Golf, food and off-sites.", d: "Boardroom-scale lunches or full company days paired with the course and clubhouse." },
           ].map((c) => (
             <div key={c.k} className="reveal group">
               <div className="aspect-[4/5] overflow-hidden mb-6">
@@ -81,6 +86,16 @@ function EventsPage() {
               <div className="kicker text-forest mb-3">{c.k}</div>
               <h3 className="font-serif text-3xl text-charcoal">{c.t}</h3>
               <p className="mt-3 text-charcoal/65 leading-relaxed">{c.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-cream pb-28 md:pb-36">
+        <div className="mx-auto grid max-w-[1480px] gap-4 px-5 md:grid-cols-4 md:px-10">
+          {[eventGolf03, eventDinner02, eventGolf01, eventDinner04].map((src, i) => (
+            <div key={src} className={`reveal overflow-hidden image-polish ${i % 2 ? "md:mt-12" : ""}`}>
+              <img src={src} alt="" loading="lazy" className="aspect-[4/5] h-full w-full object-cover transition-transform duration-[1200ms] hover:scale-105" />
             </div>
           ))}
         </div>
