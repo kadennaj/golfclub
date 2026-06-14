@@ -2,20 +2,17 @@ import { useEffect, useState } from "react";
 
 const ITEMS = [
   {
-    quote:
-      "First-class service from the pro shop to the grounds crew.",
+    quote: "First-class service from the pro shop to the grounds crew.",
     name: "Mike Butler",
     role: "Symtech",
   },
   {
-    quote:
-      "A beautifully groomed course and true professionalism.",
+    quote: "A beautifully groomed course and true professionalism.",
     name: "Guy Schembri",
     role: "Local 416",
   },
   {
-    quote:
-      "Flawless tournament days. We come back every year.",
+    quote: "Flawless tournament days. We come back every year.",
     name: "Agnes Caplan",
     role: "TBMOA",
   },

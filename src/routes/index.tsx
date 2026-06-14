@@ -72,7 +72,12 @@ function HomePage() {
                   i === 1 ? "mt-10 aspect-[4/5]" : "aspect-[4/5]"
                 }`}
               >
-                <img src={src} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] hover:scale-105" />
+                <img
+                  src={src}
+                  alt=""
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-[1200ms] hover:scale-105"
+                />
               </div>
             ))}
           </div>
@@ -138,7 +143,12 @@ function HomePage() {
       {/* SIGNATURE HOLES */}
       <section className="relative bg-charcoal text-cream py-28 md:py-40 overflow-hidden">
         <div className="absolute inset-0 opacity-25">
-          <img src={HOLES[4].image} alt="" aria-hidden="true" className="h-full w-full object-cover" />
+          <img
+            src={HOLES[4].image}
+            alt=""
+            aria-hidden="true"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/70 to-charcoal" />
         </div>
         <div className="relative z-10 mx-auto max-w-[1480px] px-5 md:px-10">
@@ -158,15 +168,26 @@ function HomePage() {
       {/* STATS */}
       <section className="bg-forest-deep text-cream py-8 md:py-16">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-cream/10">
-          <div className="lg:px-10"><Stat kicker="Since" value={1958} label="Richmond Hill golf" /></div>
-          <div className="lg:px-10"><Stat kicker="Course" value={18} label="Public parkland holes" /></div>
-          <div className="lg:px-10"><Stat kicker="Round" value={4} suffix="h 20m" label="Average pace" /></div>
-          <div className="lg:px-10"><Stat kicker="Book" value={4} suffix=" weeks" label="Advance window" /></div>
+          <div className="lg:px-10">
+            <Stat kicker="Since" value={1958} label="Richmond Hill golf" />
+          </div>
+          <div className="lg:px-10">
+            <Stat kicker="Course" value={18} label="Public parkland holes" />
+          </div>
+          <div className="lg:px-10">
+            <Stat kicker="Round" value={4} suffix="h 20m" label="Average pace" />
+          </div>
+          <div className="lg:px-10">
+            <Stat kicker="Book" value={4} suffix=" weeks" label="Advance window" />
+          </div>
         </div>
       </section>
 
       {/* PREPAID ELITE */}
-      <section className="relative overflow-hidden bg-charcoal text-cream py-28 md:py-40" id="elite">
+      <section
+        className="relative overflow-hidden bg-charcoal text-cream py-28 md:py-40"
+        id="elite"
+      >
         <div className="absolute inset-0 soft-vignette opacity-30" />
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
           <SectionHeading
@@ -178,9 +199,39 @@ function HomePage() {
           />
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              { name: "Silver", price: "Save 15% off green fees", featured: false, items: ["10% off Proshop, F&B and range", "4-week advance booking", "Signing privileges", "Funds roll over 3 years"] },
-              { name: "Gold", price: "Save 20% off green fees", featured: true, items: ["10% off Proshop, F&B and range", "4-week advance booking", "Signing privileges", "Funds roll over 3 years"] },
-              { name: "Platinum", price: "Save 25% off green fees", featured: false, items: ["10% off Proshop, F&B and range", "4-week advance booking", "Signing privileges", "Funds roll over 3 years"] },
+              {
+                name: "Silver",
+                price: "Save 15% off green fees",
+                featured: false,
+                items: [
+                  "10% off Proshop, F&B and range",
+                  "4-week advance booking",
+                  "Signing privileges",
+                  "Funds roll over 3 years",
+                ],
+              },
+              {
+                name: "Gold",
+                price: "Save 20% off green fees",
+                featured: true,
+                items: [
+                  "10% off Proshop, F&B and range",
+                  "4-week advance booking",
+                  "Signing privileges",
+                  "Funds roll over 3 years",
+                ],
+              },
+              {
+                name: "Platinum",
+                price: "Save 25% off green fees",
+                featured: false,
+                items: [
+                  "10% off Proshop, F&B and range",
+                  "4-week advance booking",
+                  "Signing privileges",
+                  "Funds roll over 3 years",
+                ],
+              },
             ].map((t) => (
               <div
                 key={t.name}
@@ -190,7 +241,9 @@ function HomePage() {
               >
                 {t.featured && <div className="kicker text-gold mb-3">Most Popular</div>}
                 <h3 className="font-serif text-3xl md:text-4xl">{t.name}</h3>
-                <div className="mt-3 text-cream/60 text-sm tracking-[0.18em] uppercase">{t.price}</div>
+                <div className="mt-3 text-cream/60 text-sm tracking-[0.18em] uppercase">
+                  {t.price}
+                </div>
                 <div className="my-8 hairline text-cream" />
                 <ul className="space-y-3 text-sm text-cream/80 flex-1">
                   {t.items.map((it) => (
@@ -223,11 +276,18 @@ function HomePage() {
       <section className="bg-cream py-28 md:py-40">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-12 lg:gap-20 lg:grid-cols-2 items-center">
           <div className="reveal relative aspect-[4/5] overflow-hidden image-polish">
-            <img src={eventDinner03} alt="Event dining at Richmond Hill Golf Club" loading="lazy" className="absolute inset-0 h-full w-full object-cover scale-105 hover:scale-110 transition-transform duration-[1600ms]" />
+            <img
+              src={eventDinner03}
+              alt="Event dining at Richmond Hill Golf Club"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover scale-105 hover:scale-110 transition-transform duration-[1600ms]"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 glass p-5 text-cream">
               <div className="kicker text-gold mb-2">Up To 200 Guests</div>
-              <div className="font-serif text-3xl leading-none">Forest views. Polished service.</div>
+              <div className="font-serif text-3xl leading-none">
+                Forest views. Polished service.
+              </div>
             </div>
           </div>
           <div>
@@ -239,7 +299,12 @@ function HomePage() {
             <div className="reveal mt-10 grid grid-cols-3 gap-3">
               {[eventDinner01, eventGolf03, eventDinner02].map((src, i) => (
                 <div key={i} className="aspect-square overflow-hidden">
-                  <img src={src} alt="" loading="lazy" className="h-full w-full object-cover hover:scale-110 transition-transform duration-700" />
+                  <img
+                    src={src}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover hover:scale-110 transition-transform duration-700"
+                  />
                 </div>
               ))}
             </div>
@@ -262,7 +327,12 @@ function HomePage() {
 
       {/* FINAL CTA */}
       <section className="relative h-[80svh] min-h-[560px] overflow-hidden bg-charcoal text-cream">
-        <img src={HOLES[17].image} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+        <img
+          src={HOLES[17].image}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/70" />
         <div className="absolute inset-0 soft-vignette opacity-40 mix-blend-screen" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-5">

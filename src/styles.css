@@ -138,12 +138,11 @@
   }
 
   .glass {
-    background:
-      linear-gradient(
-        135deg,
-        color-mix(in oklab, var(--cream) 16%, transparent),
-        color-mix(in oklab, var(--charcoal) 52%, transparent)
-      );
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--cream) 16%, transparent),
+      color-mix(in oklab, var(--charcoal) 52%, transparent)
+    );
     backdrop-filter: blur(18px) saturate(150%);
     -webkit-backdrop-filter: blur(18px) saturate(150%);
     border: 1px solid color-mix(in oklab, var(--cream) 18%, transparent);
@@ -156,8 +155,16 @@
 
   .soft-vignette {
     background:
-      radial-gradient(circle at 20% 15%, color-mix(in oklab, var(--gold) 24%, transparent), transparent 28rem),
-      radial-gradient(circle at 80% 30%, color-mix(in oklab, var(--forest) 18%, transparent), transparent 34rem);
+      radial-gradient(
+        circle at 20% 15%,
+        color-mix(in oklab, var(--gold) 24%, transparent),
+        transparent 28rem
+      ),
+      radial-gradient(
+        circle at 80% 30%,
+        color-mix(in oklab, var(--forest) 18%, transparent),
+        transparent 34rem
+      );
   }
 
   .hairline {

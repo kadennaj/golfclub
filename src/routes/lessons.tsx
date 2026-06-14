@@ -19,16 +19,25 @@ export const Route = createFileRoute("/lessons")({
   head: () => ({
     meta: [
       { title: "Academy & Simulators — Richmond Hill Golf Club" },
-      { name: "description", content: "CPGA instruction, three Foresight Sports GC Hawk simulators and seasonal clinics at the Richmond Hill Golf Academy." },
+      {
+        name: "description",
+        content:
+          "CPGA instruction, three Foresight Sports GC Hawk simulators and seasonal clinics at the Richmond Hill Golf Academy.",
+      },
       { property: "og:title", content: "Academy — Richmond Hill Golf Club" },
-      { property: "og:description", content: "Get your game in shape — private, semi-private, group and junior lessons, year-round." },
+      {
+        property: "og:description",
+        content:
+          "Get your game in shape — private, semi-private, group and junior lessons, year-round.",
+      },
     ],
   }),
   component: LessonsPage,
 });
 
 const BOOKING_URL = "https://clients.uschedule.com/richmondhillgolf/booking";
-const PAYMENT_URL = "https://richmond-hill-golf-club.golfems2.com/event/richmond-hill-golf-club-lesson-payment-senior-instructors";
+const PAYMENT_URL =
+  "https://richmond-hill-golf-club.golfems2.com/event/richmond-hill-golf-club-lesson-payment-senior-instructors";
 const INQUIRY_URL = "https://form.jotform.com/80294919284972";
 const CAMP_DETAILS_URL = "https://richmondhilldaycamp.com/golf-academy";
 const CAMP_REGISTER_URL = "https://richmondhillcountryclubdaycamp.campbrainregistration.com/";
@@ -200,23 +209,61 @@ function LessonsPage() {
         <div className="mx-auto grid max-w-[1480px] gap-14 px-5 md:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div className="reveal">
             <div className="kicker text-forest mb-4">Instruction</div>
-            <h2 className="font-serif text-4xl text-charcoal md:text-6xl">Book, pay, or ask the Academy directly.</h2>
+            <h2 className="font-serif text-4xl text-charcoal md:text-6xl">
+              Book, pay, or ask the Academy directly.
+            </h2>
           </div>
           <div className="reveal grid gap-3 sm:grid-cols-3">
-            <a className="inline-flex justify-center border border-charcoal bg-charcoal px-5 py-4 text-center text-xs uppercase tracking-[0.24em] text-cream transition-colors hover:bg-forest" href={BOOKING_URL} target="_blank" rel="noopener noreferrer">Book Your Lesson</a>
-            <a className="inline-flex justify-center border border-charcoal/20 px-5 py-4 text-center text-xs uppercase tracking-[0.24em] text-charcoal transition-colors hover:border-forest hover:text-forest" href={PAYMENT_URL} target="_blank" rel="noopener noreferrer">Pay for a Lesson</a>
-            <a className="inline-flex justify-center border border-charcoal/20 px-5 py-4 text-center text-xs uppercase tracking-[0.24em] text-charcoal transition-colors hover:border-forest hover:text-forest" href={INQUIRY_URL} target="_blank" rel="noopener noreferrer">Submit an Inquiry</a>
+            <a
+              className="inline-flex justify-center border border-charcoal bg-charcoal px-5 py-4 text-center text-xs uppercase tracking-[0.24em] text-cream transition-colors hover:bg-forest"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Your Lesson
+            </a>
+            <a
+              className="inline-flex justify-center border border-charcoal/20 px-5 py-4 text-center text-xs uppercase tracking-[0.24em] text-charcoal transition-colors hover:border-forest hover:text-forest"
+              href={PAYMENT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pay for a Lesson
+            </a>
+            <a
+              className="inline-flex justify-center border border-charcoal/20 px-5 py-4 text-center text-xs uppercase tracking-[0.24em] text-charcoal transition-colors hover:border-forest hover:text-forest"
+              href={INQUIRY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Submit an Inquiry
+            </a>
           </div>
         </div>
 
         <div className="mx-auto mt-20 grid max-w-[1480px] gap-16 px-5 md:px-10 lg:grid-cols-2">
           {[
-            { img: academyRoom, k: "Private Lessons", t: "One-on-one with a CPGA professional.", d: "Half-hour and one-hour sessions, with multi-lesson packages for adults, juniors, beginners and competitive players." },
-            { img: academyBayDark, k: "Simulator Bays", t: "Three Foresight Sports GC Hawks.", d: "Each hitting bay is 10 ft high and 15 ft wide for a fully immersive experience, with lessons available through the winter and in-season." },
+            {
+              img: academyRoom,
+              k: "Private Lessons",
+              t: "One-on-one with a CPGA professional.",
+              d: "Half-hour and one-hour sessions, with multi-lesson packages for adults, juniors, beginners and competitive players.",
+            },
+            {
+              img: academyBayDark,
+              k: "Simulator Bays",
+              t: "Three Foresight Sports GC Hawks.",
+              d: "Each hitting bay is 10 ft high and 15 ft wide for a fully immersive experience, with lessons available through the winter and in-season.",
+            },
           ].map((c) => (
             <div key={c.k} className="reveal group">
               <div className="aspect-[4/3] overflow-hidden mb-6">
-                <img src={c.img} alt={c.t} loading="lazy" className="h-full w-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1400ms]" />
+                <img
+                  src={c.img}
+                  alt={c.t}
+                  loading="lazy"
+                  className="h-full w-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1400ms]"
+                />
               </div>
               <div className="kicker text-forest mb-3">{c.k}</div>
               <h3 className="font-serif text-3xl text-charcoal">{c.t}</h3>
@@ -228,7 +275,11 @@ function LessonsPage() {
 
       <section className="bg-charcoal text-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
-          <SectionHeading tone="dark" kicker="Academy Features" title="Built for year-round practice." />
+          <SectionHeading
+            tone="dark"
+            kicker="Academy Features"
+            title="Built for year-round practice."
+          />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4 text-cream/80">
             {[
               "Sheltered outdoor hitting stations",
@@ -250,17 +301,29 @@ function LessonsPage() {
 
       <section className="bg-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
-          <SectionHeading kicker="The Team" title="CPGA professionals, every learning style." intro="For general inquiries: academy@richmondhillgolf.com" className="mb-14" />
+          <SectionHeading
+            kicker="The Team"
+            title="CPGA professionals, every learning style."
+            intro="For general inquiries: academy@richmondhillgolf.com"
+            className="mb-14"
+          />
           <div className="grid gap-x-8 gap-y-14 md:grid-cols-2 xl:grid-cols-3">
             {TEAM.map((m) => (
               <div key={m.email} className="reveal border-t border-charcoal/15 pt-6">
                 <div className="flex items-start gap-5">
-                  <img src={m.image} alt={m.name} loading="lazy" className="h-20 w-20 shrink-0 rounded-full border border-charcoal/10 object-cover shadow-sm md:h-24 md:w-24" />
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    loading="lazy"
+                    className="h-20 w-20 shrink-0 rounded-full border border-charcoal/10 object-cover shadow-sm md:h-24 md:w-24"
+                  />
                   <div className="min-w-0">
                     <div className="font-serif text-2xl text-charcoal">{m.name}</div>
                     <div className="kicker text-forest mt-2">{m.role}</div>
                     <div className="mt-3 flex flex-col gap-1 text-sm text-charcoal/65">
-                      <a href={`mailto:${m.email}`} className="hover:text-forest transition-colors">{m.email}</a>
+                      <a href={`mailto:${m.email}`} className="hover:text-forest transition-colors">
+                        {m.email}
+                      </a>
                       <span>{m.phone}</span>
                     </div>
                   </div>
@@ -270,11 +333,15 @@ function LessonsPage() {
                     View Bio
                   </summary>
                   <div className="mt-4 space-y-4 text-sm leading-relaxed text-charcoal/68">
-                    {m.bio.map((p) => <p key={p}>{p}</p>)}
+                    {m.bio.map((p) => (
+                      <p key={p}>{p}</p>
+                    ))}
                     <div className="pt-2">
                       <div className="kicker text-forest mb-3">What’s in the Bag?</div>
                       <ul className="space-y-1">
-                        {m.bag.map((item) => <li key={item}>{item}</li>)}
+                        {m.bag.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
                       </ul>
                     </div>
                   </div>
@@ -291,8 +358,16 @@ function LessonsPage() {
           <div className="mt-12 grid gap-10 md:grid-cols-3 text-cream/85">
             {[
               { t: "Adult ½ Hour", p: "$80", note: "6-pack $450 · 12-pack $840" },
-              { t: "Adult 1 Hour", p: "$145", note: "6-pack $810 · 12-pack $1,500 · 24-pack $2,880" },
-              { t: "Junior 1 Hour", p: "$125", note: "Ages 18 & under · 6-pack $690 · 12-pack $1,260" },
+              {
+                t: "Adult 1 Hour",
+                p: "$145",
+                note: "6-pack $810 · 12-pack $1,500 · 24-pack $2,880",
+              },
+              {
+                t: "Junior 1 Hour",
+                p: "$125",
+                note: "Ages 18 & under · 6-pack $690 · 12-pack $1,260",
+              },
               { t: "Semi-Private (2:1)", p: "$85 / person", note: "1 hour · 6-pack $480" },
               { t: "Small Group (3:1)", p: "$65 / person", note: "1 hour · 6-pack $360" },
               { t: "Junior Group (3:1)", p: "$55 / person", note: "1 hour · 6-pack $300" },
@@ -305,7 +380,17 @@ function LessonsPage() {
             ))}
           </div>
           <p className="reveal mt-10 text-cream/55 text-sm max-w-2xl">
-            All lesson packages are non-refundable but have no expiry date. HST excluded. We do not accept cash. To book: <a className="text-gold hover:text-cream transition-colors" href={BOOKING_URL} target="_blank" rel="noopener noreferrer">book online</a> or call (905) 889-4653 ext.448.
+            All lesson packages are non-refundable but have no expiry date. HST excluded. We do not
+            accept cash. To book:{" "}
+            <a
+              className="text-gold hover:text-cream transition-colors"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              book online
+            </a>{" "}
+            or call (905) 889-4653 ext.448.
           </p>
         </div>
       </section>
@@ -313,15 +398,39 @@ function LessonsPage() {
       <section className="bg-cream py-28 md:py-36">
         <div className="mx-auto grid max-w-[1480px] gap-14 px-5 md:px-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="reveal overflow-hidden">
-            <img src={juniorCamp} alt="Summer junior golf camp" loading="lazy" className="h-full min-h-[420px] w-full object-cover" />
+            <img
+              src={juniorCamp}
+              alt="Summer junior golf camp"
+              loading="lazy"
+              className="h-full min-h-[420px] w-full object-cover"
+            />
           </div>
           <div className="reveal">
             <div className="kicker text-forest mb-4">2026 Summer Junior Golf Camp</div>
-            <h2 className="font-serif text-4xl text-charcoal md:text-6xl">Half-day golf, half-day camp.</h2>
+            <h2 className="font-serif text-4xl text-charcoal md:text-6xl">
+              Half-day golf, half-day camp.
+            </h2>
             <div className="mt-6 space-y-4 text-charcoal/68 leading-relaxed">
-              <p>In conjunction with the Richmond Hill Country Club Day Camp, our Golf Academy offers a summer junior golf camp that provides the best of both worlds, a half day of golf instruction, coupled with a half day of multi-sports activities!</p>
-              <p>Our Golf Camp is designed for junior golfers who have completed grade 1 through grade 7 and are either brand new to the game of golf or have some experience and are looking to advance their skills to the next level. Golf instruction takes place for 3 hours each day with the other half of the day spent participating in various sports as well as a daily recreational swim. Lunch and snacks are included in all our camp programs.</p>
-              <p>Each 2 week summer camp session will cover all of the key fundamentals of golf including, grip, stance, posture & alignment. All major swing aspects including full swing, chipping, putting and bunker play will be covered thoroughly. Our CPGA instructors will conduct a daily review in the rules of golf and course etiquette to get campers comfortable for when they are ready to hit the links on their own.</p>
+              <p>
+                In conjunction with the Richmond Hill Country Club Day Camp, our Golf Academy offers
+                a summer junior golf camp that provides the best of both worlds, a half day of golf
+                instruction, coupled with a half day of multi-sports activities!
+              </p>
+              <p>
+                Our Golf Camp is designed for junior golfers who have completed grade 1 through
+                grade 7 and are either brand new to the game of golf or have some experience and are
+                looking to advance their skills to the next level. Golf instruction takes place for
+                3 hours each day with the other half of the day spent participating in various
+                sports as well as a daily recreational swim. Lunch and snacks are included in all
+                our camp programs.
+              </p>
+              <p>
+                Each 2 week summer camp session will cover all of the key fundamentals of golf
+                including, grip, stance, posture & alignment. All major swing aspects including full
+                swing, chipping, putting and bunker play will be covered thoroughly. Our CPGA
+                instructors will conduct a daily review in the rules of golf and course etiquette to
+                get campers comfortable for when they are ready to hit the links on their own.
+              </p>
             </div>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {[
@@ -337,10 +446,27 @@ function LessonsPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-5 text-sm text-charcoal/55">*The schedule typically alternates daily with golf instruction taking place in the afternoon every other day.</p>
+            <p className="mt-5 text-sm text-charcoal/55">
+              *The schedule typically alternates daily with golf instruction taking place in the
+              afternoon every other day.
+            </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={CAMP_DETAILS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex justify-center border border-charcoal bg-charcoal px-5 py-4 text-xs uppercase tracking-[0.24em] text-cream transition-colors hover:bg-forest">More Details</a>
-              <a href={CAMP_REGISTER_URL} target="_blank" rel="noopener noreferrer" className="inline-flex justify-center border border-charcoal/20 px-5 py-4 text-xs uppercase tracking-[0.24em] text-charcoal transition-colors hover:border-forest hover:text-forest">Register Now</a>
+              <a
+                href={CAMP_DETAILS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex justify-center border border-charcoal bg-charcoal px-5 py-4 text-xs uppercase tracking-[0.24em] text-cream transition-colors hover:bg-forest"
+              >
+                More Details
+              </a>
+              <a
+                href={CAMP_REGISTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex justify-center border border-charcoal/20 px-5 py-4 text-xs uppercase tracking-[0.24em] text-charcoal transition-colors hover:border-forest hover:text-forest"
+              >
+                Register Now
+              </a>
             </div>
           </div>
         </div>

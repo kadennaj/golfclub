@@ -27,7 +27,9 @@ export function SectionHeading({
           {kicker}
         </div>
       )}
-      <h2 className={`reveal font-serif ${text} text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance`}>
+      <h2
+        className={`reveal font-serif ${text} text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance`}
+      >
         {title}
       </h2>
       {intro && (

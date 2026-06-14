@@ -33,7 +33,7 @@ export function HeroVideo({ src, poster, className = "" }: Props) {
           }
         });
       },
-      { rootMargin: "200px" }
+      { rootMargin: "200px" },
     );
     io.observe(el);
     return () => io.disconnect();

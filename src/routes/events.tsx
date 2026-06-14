@@ -15,9 +15,16 @@ export const Route = createFileRoute("/events")({
   head: () => ({
     meta: [
       { title: "Tournaments & The Richvale Room — Richmond Hill Golf Club" },
-      { name: "description", content: "Corporate tournaments, charity events, weddings and meetings hosted at the Richvale Room — up to 200 guests, in Richmond Hill, Ontario." },
+      {
+        name: "description",
+        content:
+          "Corporate tournaments, charity events, weddings and meetings hosted at the Richvale Room — up to 200 guests, in Richmond Hill, Ontario.",
+      },
       { property: "og:title", content: "Events & Tournaments — Richmond Hill Golf Club" },
-      { property: "og:description", content: "A unique set of services and amenities for corporate, charity and social events." },
+      {
+        property: "og:description",
+        content: "A unique set of services and amenities for corporate, charity and social events.",
+      },
     ],
   }),
   component: EventsPage,
@@ -53,12 +60,26 @@ function EventsPage() {
       {/* How we help */}
       <section className="bg-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
-          <SectionHeading kicker="Our Staff Are Here To Help" title="From first call to follow-up." intro="Planning stays simple, service stays close, and the room feels ready when guests arrive." className="mb-14" />
+          <SectionHeading
+            kicker="Our Staff Are Here To Help"
+            title="From first call to follow-up."
+            intro="Planning stays simple, service stays close, and the room feels ready when guests arrive."
+            className="mb-14"
+          />
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Pre-Planning", "Choose the date, format, room setup and menu with a team that knows the flow."],
-              ["Tournament Golf", "Bag drop, scoring, contests, carts, sponsor signs and guest movement handled cleanly."],
-              ["Dining", "The 19th Hole, patios and Richvale Room support everything from lunches to banquets."],
+              [
+                "Pre-Planning",
+                "Choose the date, format, room setup and menu with a team that knows the flow.",
+              ],
+              [
+                "Tournament Golf",
+                "Bag drop, scoring, contests, carts, sponsor signs and guest movement handled cleanly.",
+              ],
+              [
+                "Dining",
+                "The 19th Hole, patios and Richvale Room support everything from lunches to banquets.",
+              ],
               ["Event Day", "Staff stay close so your guests can settle in and enjoy the day."],
             ].map(([t, d]) => (
               <div key={t} className="reveal border-t border-charcoal/15 pt-6">
@@ -74,14 +95,39 @@ function EventsPage() {
       <section className="bg-cream pb-28 md:pb-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-16 lg:grid-cols-4">
           {[
-            { img: eventGolf02, k: "Tournaments", t: "Shotgun, scramble or stroke.", d: "A smooth tournament day with scoring, contests, carts, sponsor signs and hospitality." },
-            { img: eventDinner01, k: "The Richvale Room", t: "Up to 200 guests.", d: "A vaulted, light-filled room for weddings, banquets, meetings and private celebrations." },
-            { img: eventDinner03, k: "Dining", t: "The 19th Hole and patios.", d: "A relaxed post-round setting for meals, drinks and smaller group gatherings." },
-            { img: eventGolf04, k: "Corporate", t: "Golf, food and off-sites.", d: "Boardroom-scale lunches or full company days paired with the course and clubhouse." },
+            {
+              img: eventGolf02,
+              k: "Tournaments",
+              t: "Shotgun, scramble or stroke.",
+              d: "A smooth tournament day with scoring, contests, carts, sponsor signs and hospitality.",
+            },
+            {
+              img: eventDinner01,
+              k: "The Richvale Room",
+              t: "Up to 200 guests.",
+              d: "A vaulted, light-filled room for weddings, banquets, meetings and private celebrations.",
+            },
+            {
+              img: eventDinner03,
+              k: "Dining",
+              t: "The 19th Hole and patios.",
+              d: "A relaxed post-round setting for meals, drinks and smaller group gatherings.",
+            },
+            {
+              img: eventGolf04,
+              k: "Corporate",
+              t: "Golf, food and off-sites.",
+              d: "Boardroom-scale lunches or full company days paired with the course and clubhouse.",
+            },
           ].map((c) => (
             <div key={c.k} className="reveal group">
               <div className="aspect-[4/5] overflow-hidden mb-6">
-                <img src={c.img} alt={c.t} loading="lazy" className="h-full w-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1400ms]" />
+                <img
+                  src={c.img}
+                  alt={c.t}
+                  loading="lazy"
+                  className="h-full w-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1400ms]"
+                />
               </div>
               <div className="kicker text-forest mb-3">{c.k}</div>
               <h3 className="font-serif text-3xl text-charcoal">{c.t}</h3>
@@ -94,8 +140,16 @@ function EventsPage() {
       <section className="bg-cream pb-28 md:pb-36">
         <div className="mx-auto grid max-w-[1480px] gap-4 px-5 md:grid-cols-4 md:px-10">
           {[eventGolf03, eventDinner02, eventGolf01, eventDinner04].map((src, i) => (
-            <div key={src} className={`reveal overflow-hidden image-polish ${i % 2 ? "md:mt-12" : ""}`}>
-              <img src={src} alt="" loading="lazy" className="aspect-[4/5] h-full w-full object-cover transition-transform duration-[1200ms] hover:scale-105" />
+            <div
+              key={src}
+              className={`reveal overflow-hidden image-polish ${i % 2 ? "md:mt-12" : ""}`}
+            >
+              <img
+                src={src}
+                alt=""
+                loading="lazy"
+                className="aspect-[4/5] h-full w-full object-cover transition-transform duration-[1200ms] hover:scale-105"
+              />
             </div>
           ))}
         </div>
@@ -103,11 +157,26 @@ function EventsPage() {
 
       <section className="bg-charcoal text-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 text-center">
-          <SectionHeading tone="dark" align="center" kicker="Plan With Us" title="Every event begins with a conversation." className="mx-auto" />
+          <SectionHeading
+            tone="dark"
+            align="center"
+            kicker="Plan With Us"
+            title="Every event begins with a conversation."
+            className="mx-auto"
+          />
           <p className="reveal mt-6 text-cream/65 max-w-xl mx-auto">
-            Contact our Event Manager directly: <a className="text-gold hover:text-cream transition-colors" href="mailto:lbodanis@richmondhillgolf.com">lbodanis@richmondhillgolf.com</a>
+            Contact our Event Manager directly:{" "}
+            <a
+              className="text-gold hover:text-cream transition-colors"
+              href="mailto:lbodanis@richmondhillgolf.com"
+            >
+              lbodanis@richmondhillgolf.com
+            </a>
           </p>
-          <Link to="/contact" className="reveal mt-10 inline-flex items-center px-8 py-4 text-xs tracking-[0.24em] uppercase bg-gold text-charcoal hover:bg-cream transition-colors">
+          <Link
+            to="/contact"
+            className="reveal mt-10 inline-flex items-center px-8 py-4 text-xs tracking-[0.24em] uppercase bg-gold text-charcoal hover:bg-cream transition-colors"
+          >
             Begin Planning
           </Link>
         </div>

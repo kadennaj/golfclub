@@ -26,7 +26,9 @@ export function Nav() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   return (
@@ -85,7 +87,11 @@ export function Nav() {
       >
         <div className="flex h-20 items-center justify-between px-5">
           <Logo variant={logoVariant} />
-          <button onClick={() => setOpen(false)} aria-label="Close menu" className="cursor-pointer p-2 -mr-2">
+          <button
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+            className="cursor-pointer p-2 -mr-2"
+          >
             <X className="h-6 w-6" />
           </button>
         </div>
