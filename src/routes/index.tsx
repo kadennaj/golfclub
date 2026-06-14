@@ -171,7 +171,7 @@ function HomePage() {
       <section className="bg-forest-deep text-cream py-8 md:py-16">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-cream/10">
           <div className="lg:px-10">
-            <Stat kicker="Since" value={1958} label="Richmond Hill golf" />
+            <Stat kicker="Since" value={1992} label="Richmond Hill golf" />
           </div>
           <div className="lg:px-10">
             <Stat kicker="Course" value={18} label="Public parkland holes" />
