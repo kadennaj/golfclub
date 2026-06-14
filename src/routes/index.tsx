@@ -15,6 +15,8 @@ import eventGolf03 from "../assets/events-real/event-golf-03.jpg";
 import eventDinner01 from "../assets/events-real/event-dinner-01.jpg";
 import eventDinner02 from "../assets/events-real/event-dinner-02.jpg";
 import eventDinner03 from "../assets/events-real/event-dinner-03.jpg";
+import richvaleBanquetRoom from "../assets/events-real/richvale-banquet-room.jpg";
+import simulatorBays from "../assets/academy/simulator-bays.jpg";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -124,7 +126,7 @@ function HomePage() {
               kicker="Weddings"
               title="The Richvale Room."
               body="Vaulted ceilings, forest views and a polished setting for weddings and private celebrations."
-              image={eventDinner02}
+              image={richvaleBanquetRoom}
               to="/events"
               reverse
             />
@@ -133,7 +135,7 @@ function HomePage() {
               kicker="Simulators"
               title="Winter, solved."
               body="Three Foresight GC Hawk bays for practice, play and clean data when the course rests."
-              image={HOLES[15].image}
+              image={simulatorBays}
               to="/lessons"
             />
           </div>
