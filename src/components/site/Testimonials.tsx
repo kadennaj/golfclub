@@ -44,10 +44,15 @@ export function Testimonials() {
             key={n}
             onClick={() => setI(n)}
             aria-label={`Show testimonial ${n + 1}`}
-            className={`h-1.5 cursor-pointer rounded-full transition-all duration-500 ${
-              n === i ? "w-8 bg-forest" : "w-1.5 bg-charcoal/25"
-            }`}
-          />
+            className="inline-flex min-h-6 min-w-6 cursor-pointer items-center justify-center"
+          >
+            <span
+              aria-hidden="true"
+              className={`h-1.5 rounded-full transition-all duration-500 ${
+                n === i ? "w-8 bg-forest" : "w-1.5 bg-charcoal/25"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>
