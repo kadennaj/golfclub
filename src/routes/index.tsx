@@ -20,23 +20,27 @@ import simulatorBays from "../assets/academy/simulator-bays.jpg";
 const LUXURY_NAV_ITEMS = [
   {
     label: "Golf",
+    kicker: "The Course",
     to: "/golf",
-    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1200",
+    image: HOLES[7].image,
   },
   {
     label: "Membership",
+    kicker: "Prepaid Elite",
     to: "/membership",
-    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200",
+    image: HOLES[9].image,
   },
   {
     label: "Dining",
+    kicker: "Events & Dining",
     to: "/dining",
-    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200",
+    image: eventDinner03,
   },
   {
     label: "Academy",
+    kicker: "Lessons & Simulators",
     to: "/lessons",
-    image: "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=1200",
+    image: simulatorBays,
   },
 ] as const;
 
@@ -80,22 +84,30 @@ function HomePage() {
       </section>
 
       {/* SECTION NAVIGATION */}
-      <section className="py-10 md:py-14" aria-label="Club sections">
+      <section className="py-10 md:py-16" aria-label="Club sections">
         <nav className="flex w-full flex-col gap-[10px]">
-          {LUXURY_NAV_ITEMS.map((item) => (
+          {LUXURY_NAV_ITEMS.map((item, index) => (
             <Link
               key={item.label}
               to={item.to}
               className="luxury-nav-card reveal flex items-center justify-center"
             >
-              <span
-                className="luxury-nav-card__image absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${item.image})` }}
+              <img
+                src={item.image}
+                alt=""
+                loading="lazy"
+                className="luxury-nav-card__image absolute inset-0 h-full w-full object-cover"
                 aria-hidden="true"
               />
               <span className="luxury-nav-card__overlay absolute inset-0" aria-hidden="true" />
+              <span className="luxury-nav-card__meta luxury-nav-card__meta--left">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <span className="luxury-nav-card__label relative z-10 uppercase">
                 {item.label}
+              </span>
+              <span className="luxury-nav-card__meta luxury-nav-card__meta--right">
+                {item.kicker}
               </span>
             </Link>
           ))}
