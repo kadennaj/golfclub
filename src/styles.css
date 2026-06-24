@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter+Tight:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -151,6 +151,67 @@
 
   .image-polish {
     box-shadow: 0 26px 90px color-mix(in oklab, var(--charcoal) 18%, transparent);
+  }
+
+  .luxury-nav-card {
+    height: 90px;
+    width: 100%;
+    background-color: #f5f0e8;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    transition: border-color 0.6s ease;
+  }
+
+  .luxury-nav-card:hover {
+    border-color: rgba(0, 0, 0, 0.22);
+  }
+
+  .luxury-nav-card__image {
+    opacity: 0;
+    transform: scale(1.04);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+
+  .luxury-nav-card:hover .luxury-nav-card__image {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .luxury-nav-card__overlay {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15));
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .luxury-nav-card:hover .luxury-nav-card__overlay {
+    opacity: 1;
+  }
+
+  .luxury-nav-card__label {
+    color: #1a1a1a;
+    font-family: "IM Fell English", ui-serif, Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    line-height: 1;
+    opacity: 0.85;
+    text-shadow: none;
+    transition:
+      color 0.6s ease,
+      letter-spacing 0.6s ease,
+      opacity 0.6s ease,
+      text-shadow 0.6s ease;
+  }
+
+  .luxury-nav-card:hover .luxury-nav-card__label {
+    color: #ffffff;
+    letter-spacing: 0.38em;
+    opacity: 1;
+    text-shadow: 0 0 18px rgba(255, 255, 255, 0.38);
   }
 
   .soft-vignette {

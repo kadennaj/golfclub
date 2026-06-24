@@ -9,7 +9,6 @@ import { Testimonials } from "../components/site/Testimonials";
 import { HOLES } from "../data/holes";
 import rhgcLogo from "../assets/brand/rhgc-logo.png";
 import heroAerial from "../assets/hero-rhgc-aerial.jpg";
-import eventGolf01 from "../assets/events-real/event-golf-01.jpg";
 import eventGolf02 from "../assets/events-real/event-golf-02.jpg";
 import eventGolf03 from "../assets/events-real/event-golf-03.jpg";
 import eventDinner01 from "../assets/events-real/event-dinner-01.jpg";
@@ -17,6 +16,29 @@ import eventDinner02 from "../assets/events-real/event-dinner-02.jpg";
 import eventDinner03 from "../assets/events-real/event-dinner-03.jpg";
 import richvaleBanquetRoom from "../assets/events-real/richvale-banquet-room.jpg";
 import simulatorBays from "../assets/academy/simulator-bays.jpg";
+
+const LUXURY_NAV_ITEMS = [
+  {
+    label: "Golf",
+    to: "/golf",
+    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1200",
+  },
+  {
+    label: "Membership",
+    to: "/membership",
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200",
+  },
+  {
+    label: "Dining",
+    to: "/dining",
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200",
+  },
+  {
+    label: "Academy",
+    to: "/lessons",
+    image: "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=1200",
+  },
+] as const;
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -57,33 +79,27 @@ function HomePage() {
         </div>
       </section>
 
-      {/* BRAND STATEMENT */}
-      <section className="bg-cream py-24 md:py-36">
-        <div className="mx-auto grid max-w-[1480px] items-end gap-12 px-5 md:px-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <div className="reveal kicker text-forest mb-8">Open To Everyone</div>
-            <p className="reveal font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl text-balance text-charcoal">
-              A quiet round, a full tournament, a winter swing session.
-            </p>
-          </div>
-          <div className="reveal grid grid-cols-3 gap-3 md:gap-4">
-            {[HOLES[7].image, eventDinner01, eventGolf01].map((src, i) => (
-              <div
-                key={src}
-                className={`image-polish overflow-hidden bg-charcoal ${
-                  i === 1 ? "mt-10 aspect-[4/5]" : "aspect-[4/5]"
-                }`}
-              >
-                <img
-                  src={src}
-                  alt=""
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-[1200ms] hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* SECTION NAVIGATION */}
+      <section className="py-10 md:py-14" aria-label="Club sections">
+        <nav className="flex w-full flex-col gap-[10px]">
+          {LUXURY_NAV_ITEMS.map((item) => (
+            <Link
+              key={item.label}
+              to={item.to}
+              className="luxury-nav-card reveal flex items-center justify-center"
+            >
+              <span
+                className="luxury-nav-card__image absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${item.image})` }}
+                aria-hidden="true"
+              />
+              <span className="luxury-nav-card__overlay absolute inset-0" aria-hidden="true" />
+              <span className="luxury-nav-card__label relative z-10 uppercase">
+                {item.label}
+              </span>
+            </Link>
+          ))}
+        </nav>
       </section>
 
       {/* EXPERIENCE GRID */}
