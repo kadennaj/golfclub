@@ -6,6 +6,7 @@ import academyLogo from "../assets/brand/academy-logo.png";
 import academyRoom from "../assets/academy/academy-room.jpg";
 import academyBays from "../assets/academy/academy-bays.jpg";
 import academyBayDark from "../assets/academy/academy-bay-dark.jpg";
+import rangeFour from "../assets/academy/range-4.jpg";
 import juniorCamp from "../assets/academy/junior-camp.webp";
 import donnaNorman from "../assets/academy/donna-norman.jpg";
 import allenPanuncio from "../assets/academy/allen-panuncio.jpg";
@@ -192,6 +193,20 @@ const TEAM = [
   },
 ];
 
+const TEAM_ORDER = [
+  "Donna Norman",
+  "Aileen Robertson",
+  "Cory Southon",
+  "Allen Panuncio",
+  "Rob Miceli",
+  "Paul Davies",
+  "David Rogers",
+] as const;
+
+const ORDERED_TEAM = TEAM_ORDER.map((name) => TEAM.find((member) => member.name === name)).filter(
+  (member): member is (typeof TEAM)[number] => Boolean(member),
+);
+
 function LessonsPage() {
   useReveal();
   return (
@@ -199,8 +214,8 @@ function LessonsPage() {
       <PageHero
         kicker="Academy"
         title="Get your game in shape for the new season."
-        intro="The Richmond Hill Golf Academy offers private, semi-private, on-course, group, junior camps, clinics and corporate outings — all available year-round."
-        poster={academyBays}
+        intro="Dedicated CPGA Certified Instructors. Here to make you better."
+        poster={rangeFour}
         logoSrc={academyLogo}
         logoAlt="Richmond Hill Golf Academy"
       />
@@ -241,23 +256,35 @@ function LessonsPage() {
           </div>
         </div>
 
-        <div className="mx-auto mt-20 grid max-w-[1480px] gap-16 px-5 md:px-10 lg:grid-cols-2">
+        <div className="mx-auto mt-20 grid max-w-[1480px] gap-10 px-5 md:px-10 md:grid-cols-2 xl:grid-cols-4">
           {[
             {
-              img: academyRoom,
-              k: "Private Lessons",
-              t: "One-on-one with a CPGA professional.",
-              d: "Half-hour and one-hour sessions, with multi-lesson packages for adults, juniors, beginners and competitive players.",
+              img: rangeFour,
+              k: "Private & Small Group Lessons",
+              t: "Focused coaching for your swing, your goals.",
+              d: "Private, semi-private and small group sessions with CPGA professionals for adults, juniors, beginners and competitive players.",
+            },
+            {
+              img: academyBays,
+              k: "Clinics",
+              t: "Regular clinics and corporate clinics.",
+              d: "Structured group learning for players who want a social format, plus polished corporate clinic experiences for teams and clients.",
             },
             {
               img: academyBayDark,
-              k: "Simulator Bays",
+              k: "GC Hawk Simulators",
               t: "Three Foresight Sports GC Hawks.",
-              d: "Each hitting bay is 10 ft high and 15 ft wide for a fully immersive experience, with lessons available through the winter and in-season.",
+              d: "Each hitting bay is 10 ft high and 15 ft wide for immersive year-round practice, play, lessons and detailed swing feedback.",
+            },
+            {
+              img: academyRoom,
+              k: "Club Fitting",
+              t: "Equipment tuned to your game.",
+              d: "Custom fitting support with experienced professionals who understand leading club manufacturers and how equipment affects performance.",
             },
           ].map((c) => (
             <div key={c.k} className="reveal group">
-              <div className="aspect-[4/3] overflow-hidden mb-6">
+              <div className="aspect-[4/3] overflow-hidden mb-6 bg-charcoal">
                 <img
                   src={c.img}
                   alt={c.t}
@@ -308,7 +335,7 @@ function LessonsPage() {
             className="mb-14"
           />
           <div className="grid gap-x-8 gap-y-14 md:grid-cols-2 xl:grid-cols-3">
-            {TEAM.map((m) => (
+            {ORDERED_TEAM.map((m) => (
               <div key={m.email} className="reveal border-t border-charcoal/15 pt-6">
                 <div className="flex items-start gap-5">
                   <img
