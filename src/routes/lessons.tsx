@@ -32,6 +32,7 @@ export const Route = createFileRoute("/lessons")({
           "Get your game in shape — private, semi-private, group and junior lessons, year-round.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/lessons" }],
   }),
   component: LessonsPage,
 });

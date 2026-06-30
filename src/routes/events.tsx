@@ -26,6 +26,7 @@ export const Route = createFileRoute("/events")({
         content: "A unique set of services and amenities for corporate, charity and social events.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/events" }],
   }),
   component: EventsPage,
 });

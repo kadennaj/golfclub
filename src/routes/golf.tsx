@@ -20,6 +20,7 @@ export const Route = createFileRoute("/golf")({
         content: "A walkable parkland course open to the public — 18 holes, par 70.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/golf" }],
   }),
   component: GolfPage,
 });

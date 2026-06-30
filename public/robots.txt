@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.richmondhillgolf.com/sitemap.xml

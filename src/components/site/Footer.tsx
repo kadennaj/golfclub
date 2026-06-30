@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -58,18 +57,6 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <div className="mt-6 flex gap-3">
-            {[Instagram, Facebook, Youtube].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="h-10 w-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-cream hover:text-charcoal transition-colors"
-                aria-label="Social"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
         </div>
 
         <FooterCol
@@ -89,21 +76,35 @@ export function Footer() {
           ]}
         />
         <div>
-          <h4 className="kicker text-cream">Newsletter</h4>
-          <p className="mt-4 text-sm text-cream/65">
-            Tee times, tournaments, and seasonal happenings.
-          </p>
-          <form className="mt-4 flex border-b border-cream/30 focus-within:border-gold transition-colors">
-            <input
-              type="email"
-              required
-              placeholder="Email address"
-              className="flex-1 bg-transparent py-3 text-sm placeholder:text-cream/40 focus:outline-none"
-            />
-            <button className="text-xs tracking-[0.24em] uppercase text-gold hover:text-cream transition-colors">
-              Join →
-            </button>
-          </form>
+          <h4 className="kicker text-cream">Policies</h4>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            <li>
+              <a
+                href="/docs/privacy-policy.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold transition-colors"
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a
+                href="/docs/accessibility-policy.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold transition-colors"
+              >
+                Accessibility Policy
+              </a>
+            </li>
+          </ul>
+          <a
+            href="mailto:info@richmondhillgolf.com"
+            className="mt-6 inline-flex text-xs uppercase tracking-[0.24em] text-gold transition-colors hover:text-cream"
+          >
+            Contact the Club
+          </a>
         </div>
       </div>
 

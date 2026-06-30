@@ -16,6 +16,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact — Richmond Hill Golf Club" },
       { property: "og:description", content: "Visit, call, or send a note." },
     ],
+    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/contact" }],
   }),
   component: ContactPage,
 });
@@ -108,12 +109,12 @@ const TURF_CONTACTS = [
 
 const POLICIES = [
   {
-    label: "Accessibility Policy",
-    href: "https://www.richmondhillgolf.com/wp-content/uploads/2019/03/aoda-company-policy-2018.pdf",
+    label: "Privacy Policy",
+    href: "/docs/privacy-policy.pdf",
   },
   {
-    label: "Privacy Policy",
-    href: "https://www.richmondhillgolf.com/wp-content/uploads/2021/04/rhgc-privacy-policy.pdf",
+    label: "Accessibility Policy",
+    href: "/docs/accessibility-policy.pdf",
   },
 ];
 
@@ -153,34 +154,30 @@ function ContactPage() {
             ))}
           </div>
 
-          <form className="reveal space-y-5">
-            {[
-              ["Name", "text"],
-              ["Email", "email"],
-              ["Subject", "text"],
-            ].map(([label, type]) => (
-              <div key={label}>
-                <label className="kicker text-charcoal/60 mb-2 block">{label}</label>
-                <input
-                  type={type}
-                  className="w-full bg-transparent border-b border-charcoal/30 py-3 focus:border-forest focus:outline-none transition-colors"
-                />
-              </div>
-            ))}
-            <div>
-              <label className="kicker text-charcoal/60 mb-2 block">Message</label>
-              <textarea
-                rows={5}
-                className="w-full bg-transparent border-b border-charcoal/30 py-3 focus:border-forest focus:outline-none transition-colors resize-none"
-              />
+          <div className="reveal border-t border-charcoal/15 pt-8">
+            <div className="kicker text-forest mb-4">Contact Directly</div>
+            <h2 className="font-serif text-4xl text-charcoal md:text-5xl">
+              No web form needed.
+            </h2>
+            <p className="mt-5 max-w-xl text-charcoal/65 leading-relaxed">
+              Email the right department or call the proshop and the team will route your inquiry.
+              This site does not collect or store contact-form submissions.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="mailto:info@richmondhillgolf.com"
+                className="inline-flex justify-center bg-forest px-6 py-4 text-xs uppercase tracking-[0.24em] text-cream transition-colors hover:bg-charcoal"
+              >
+                Email Proshop
+              </a>
+              <a
+                href="tel:9058894653"
+                className="inline-flex justify-center border border-charcoal/25 px-6 py-4 text-xs uppercase tracking-[0.24em] text-charcoal transition-colors hover:border-forest hover:text-forest"
+              >
+                Call Main Line
+              </a>
             </div>
-            <button
-              type="submit"
-              className="mt-4 inline-flex items-center px-8 py-4 text-xs tracking-[0.24em] uppercase bg-forest text-cream hover:bg-charcoal transition-colors"
-            >
-              Send Note
-            </button>
-          </form>
+          </div>
         </div>
       </section>
 
@@ -325,7 +322,7 @@ function ContactPage() {
               connected to the Golf Club by a direct cart path.
             </p>
             <a
-              href="http://www.richmondhillcountryclub.com/"
+              href="https://www.richmondhillcountryclub.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs tracking-[0.24em] uppercase border-b border-charcoal pb-1 hover:text-forest transition-colors"

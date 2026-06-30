@@ -45,6 +45,9 @@ const LUXURY_NAV_ITEMS = [
 ] as const;
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/" }],
+  }),
   component: HomePage,
 });
 

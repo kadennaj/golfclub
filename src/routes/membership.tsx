@@ -19,6 +19,7 @@ export const Route = createFileRoute("/membership")({
         content: "The ultimate in convenience and savings for you and your guests.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/membership" }],
   }),
   component: MembershipPage,
 });
