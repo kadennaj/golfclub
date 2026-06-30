@@ -155,14 +155,7 @@ function ContactPage() {
           </div>
 
           <div className="reveal border-t border-charcoal/15 pt-8">
-            <div className="kicker text-forest mb-4">Contact Directly</div>
-            <h2 className="font-serif text-4xl text-charcoal md:text-5xl">
-              No web form needed.
-            </h2>
-            <p className="mt-5 max-w-xl text-charcoal/65 leading-relaxed">
-              Email the right department or call the proshop and the team will route your inquiry.
-              This site does not collect or store contact-form submissions.
-            </p>
+            <h2 className="font-serif text-4xl text-charcoal md:text-5xl">Access us fast.</h2>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="mailto:info@richmondhillgolf.com"
