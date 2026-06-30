@@ -135,7 +135,7 @@ export function Nav() {
             </button>
           </div>
 
-          <div className="relative z-10 flex flex-1 flex-col justify-between px-5 py-8 md:px-8 md:py-10">
+          <div className="relative z-10 flex min-h-0 flex-1 flex-col justify-between overflow-y-auto overscroll-contain px-5 py-8 md:px-8 md:py-10">
             <div>
               <div className="kicker mb-7 text-gold">Navigation</div>
               <nav className="flex flex-col">
