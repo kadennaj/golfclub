@@ -46,7 +46,7 @@ function EventsPage() {
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
           {[
             ["18", "Championship Holes"],
-            ["Up to 144", "Tournament Golfers"],
+            ["Up to 160", "Tournament Golfers"],
             ["Up to 200", "Banquet Guests"],
           ].map(([n, l]) => (
             <div key={l} className="reveal">
