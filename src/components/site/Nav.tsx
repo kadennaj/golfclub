@@ -171,15 +171,26 @@ export function Nav() {
                   Public golf, dining, tournaments, lessons and simulator play in Richmond Hill.
                 </p>
               </div>
-              <a
-                href="https://richmond-hill-golf.book.teeitup.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-                className="inline-flex cursor-pointer justify-center border border-gold/60 bg-gold px-5 py-3.5 text-center text-[0.68rem] uppercase tracking-[0.24em] text-charcoal transition-colors duration-300 hover:bg-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
-              >
-                Book Tee Time
-              </a>
+              <div className="grid gap-3 sm:min-w-48">
+                <a
+                  href="https://richmond-hill-golf.book.teeitup.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex cursor-pointer justify-center border border-gold/60 bg-gold px-5 py-3.5 text-center text-[0.68rem] uppercase tracking-[0.24em] text-charcoal transition-colors duration-300 hover:bg-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                >
+                  Book Tee Time
+                </a>
+                <a
+                  href="https://richmondhillgolf.clubhouseonline-e3.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex cursor-pointer justify-center border border-cream/30 px-5 py-3.5 text-center text-[0.68rem] uppercase tracking-[0.24em] text-cream transition-colors duration-300 hover:border-gold hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                >
+                  Member Login
+                </a>
+              </div>
             </div>
           </div>
         </aside>
