@@ -14,35 +14,8 @@ import eventGolf03 from "../assets/events-real/event-golf-03.jpg";
 import eventDinner01 from "../assets/events-real/event-dinner-01.jpg";
 import eventDinner02 from "../assets/events-real/event-dinner-02.jpg";
 import eventDinner03 from "../assets/events-real/event-dinner-03.jpg";
-import richvaleBanquetRoom from "../assets/events-real/richvale-banquet-room.jpg";
-import simulatorBays from "../assets/academy/simulator-bays.jpg";
-
-const LUXURY_NAV_ITEMS = [
-  {
-    label: "Golf",
-    kicker: "The Course",
-    to: "/golf",
-    image: HOLES[7].image,
-  },
-  {
-    label: "Membership",
-    kicker: "Prepaid Elite",
-    to: "/membership",
-    image: HOLES[9].image,
-  },
-  {
-    label: "Dining",
-    kicker: "Events & Dining",
-    to: "/dining",
-    image: eventDinner03,
-  },
-  {
-    label: "Academy",
-    kicker: "Lessons & Simulators",
-    to: "/lessons",
-    image: simulatorBays,
-  },
-] as const;
+import rangeFour from "../assets/academy/range-4.jpg";
+import academyBays from "../assets/academy/academy-bays.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -86,44 +59,13 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SECTION NAVIGATION */}
-      <section className="py-10 md:py-16" aria-label="Club sections">
-        <nav className="flex w-full flex-col gap-[10px]">
-          {LUXURY_NAV_ITEMS.map((item, index) => (
-            <Link
-              key={item.label}
-              to={item.to}
-              className="luxury-nav-card reveal flex items-center justify-center"
-            >
-              <img
-                src={item.image}
-                alt=""
-                loading="lazy"
-                className="luxury-nav-card__image absolute inset-0 h-full w-full object-cover"
-                aria-hidden="true"
-              />
-              <span className="luxury-nav-card__overlay absolute inset-0" aria-hidden="true" />
-              <span className="luxury-nav-card__meta luxury-nav-card__meta--left">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="luxury-nav-card__label relative z-10 uppercase">
-                {item.label}
-              </span>
-              <span className="luxury-nav-card__meta luxury-nav-card__meta--right">
-                {item.kicker}
-              </span>
-            </Link>
-          ))}
-        </nav>
-      </section>
-
       {/* EXPERIENCE GRID */}
       <section className="bg-cream pb-28 md:pb-40">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
           <SectionHeading
             kicker="The Experience"
             title="Pick your pace."
-            intro="Golf, dining, events and instruction, all in one beautifully kept place."
+            intro="Golf, academy, events, dining, practice facilities, leagues, elite prepaid membership and contact, all in one beautifully kept place."
             className="mb-20 md:mb-28"
           />
           <div className="space-y-24 md:space-y-36">
@@ -137,37 +79,63 @@ function HomePage() {
             />
             <ExperienceTile
               index="02"
-              kicker="Events & Dining"
-              title="Gather, play, dine."
-              body="Tournament mornings, banquet evenings and relaxed meals in one polished clubhouse setting."
-              image={eventGolf02}
-              to="/events"
+              kicker="Academy"
+              title="A swing worth returning to."
+              body="Private lessons, clinics, club fitting and simulator sessions with CPGA professionals."
+              image={rangeFour}
+              to="/academy"
               reverse
             />
             <ExperienceTile
               index="03"
-              kicker="Academy"
-              title="A swing worth returning to."
-              body="Private lessons, clinics and simulator sessions with CPGA professionals year-round."
-              image={HOLES[12].image}
-              to="/lessons"
+              kicker="Events"
+              title="Tournament days and celebrations."
+              body="Corporate golf, charity events, weddings and private gatherings with polished service."
+              image={eventGolf02}
+              to="/events"
             />
             <ExperienceTile
               index="04"
-              kicker="Weddings"
-              title="The Richvale Room."
-              body="Vaulted ceilings, forest views and a polished setting for weddings and private celebrations."
-              image={richvaleBanquetRoom}
-              to="/events"
+              kicker="Dining"
+              title="The 19th Hole and patios."
+              body="A relaxed clubhouse stop for meals, drinks and the easy finish after golf."
+              image={eventDinner03}
+              to="/dining"
               reverse
             />
             <ExperienceTile
               index="05"
-              kicker="Simulators"
-              title="Winter, solved."
-              body="Three Foresight GC Hawk bays for practice, play and clean data when the course rests."
-              image={simulatorBays}
-              to="/lessons"
+              kicker="Practice Facilities"
+              title="Range, short game and simulator work."
+              body="Outdoor turf, sheltered hitting stations, short-game areas and three GC Hawk bays."
+              image={academyBays}
+              to="/practice-facilities"
+            />
+            <ExperienceTile
+              index="06"
+              kicker="League"
+              title="Weekly competition, season-long stories."
+              body="Men's League and Women in Golf bring prizes, scoring and community to the season."
+              image={eventGolf03}
+              to="/league"
+              reverse
+            />
+            <ExperienceTile
+              index="07"
+              kicker="Elite Prepaid Membership"
+              title="Public golf with private-club privileges."
+              body="A prepaid account with meaningful member perks, advanced booking and golf discounts."
+              image={HOLES[9].image}
+              to="/elite-prepaid-membership"
+            />
+            <ExperienceTile
+              index="08"
+              kicker="Contact"
+              title="Access us fast."
+              body="Reach the Proshop, academy, events team or club leadership directly."
+              image={HOLES[17].image}
+              to="/contact"
+              reverse
             />
           </div>
         </div>
@@ -225,7 +193,7 @@ function HomePage() {
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
           <SectionHeading
             tone="dark"
-            kicker="Prepaid Elite Membership"
+            kicker="Elite Prepaid Membership"
             title="Simple privileges. Clean savings."
             intro="A prepaid account for golf, range, pro shop, food and beverage."
             className="mb-16"
@@ -287,7 +255,7 @@ function HomePage() {
                   ))}
                 </ul>
                 <Link
-                  to="/membership"
+                  to="/elite-prepaid-membership"
                   className={`mt-10 inline-flex cursor-pointer items-center justify-center px-6 py-3.5 text-xs tracking-[0.24em] uppercase transition-colors ${
                     t.featured
                       ? "bg-gold text-charcoal hover:bg-cream"

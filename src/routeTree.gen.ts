@@ -9,14 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PracticeFacilitiesRouteImport } from './routes/practice-facilities'
 import { Route as MembershipRouteImport } from './routes/membership'
 import { Route as LessonsRouteImport } from './routes/lessons'
+import { Route as LeaguesRouteImport } from './routes/leagues'
+import { Route as LeagueRouteImport } from './routes/league'
 import { Route as GolfRouteImport } from './routes/golf'
 import { Route as EventsRouteImport } from './routes/events'
+import { Route as ElitePrepaidMembershipRouteImport } from './routes/elite-prepaid-membership'
 import { Route as DiningRouteImport } from './routes/dining'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AcademyRouteImport } from './routes/academy'
 import { Route as IndexRouteImport } from './routes/index'
 
+const PracticeFacilitiesRoute = PracticeFacilitiesRouteImport.update({
+  id: '/practice-facilities',
+  path: '/practice-facilities',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MembershipRoute = MembershipRouteImport.update({
   id: '/membership',
   path: '/membership',
@@ -25,6 +35,16 @@ const MembershipRoute = MembershipRouteImport.update({
 const LessonsRoute = LessonsRouteImport.update({
   id: '/lessons',
   path: '/lessons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeaguesRoute = LeaguesRouteImport.update({
+  id: '/leagues',
+  path: '/leagues',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeagueRoute = LeagueRouteImport.update({
+  id: '/league',
+  path: '/league',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GolfRoute = GolfRouteImport.update({
@@ -37,6 +57,11 @@ const EventsRoute = EventsRouteImport.update({
   path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ElitePrepaidMembershipRoute = ElitePrepaidMembershipRouteImport.update({
+  id: '/elite-prepaid-membership',
+  path: '/elite-prepaid-membership',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DiningRoute = DiningRouteImport.update({
   id: '/dining',
   path: '/dining',
@@ -47,6 +72,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcademyRoute = AcademyRouteImport.update({
+  id: '/academy',
+  path: '/academy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -55,74 +85,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/academy': typeof AcademyRoute
   '/contact': typeof ContactRoute
   '/dining': typeof DiningRoute
+  '/elite-prepaid-membership': typeof ElitePrepaidMembershipRoute
   '/events': typeof EventsRoute
   '/golf': typeof GolfRoute
+  '/league': typeof LeagueRoute
+  '/leagues': typeof LeaguesRoute
   '/lessons': typeof LessonsRoute
   '/membership': typeof MembershipRoute
+  '/practice-facilities': typeof PracticeFacilitiesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/academy': typeof AcademyRoute
   '/contact': typeof ContactRoute
   '/dining': typeof DiningRoute
+  '/elite-prepaid-membership': typeof ElitePrepaidMembershipRoute
   '/events': typeof EventsRoute
   '/golf': typeof GolfRoute
+  '/league': typeof LeagueRoute
+  '/leagues': typeof LeaguesRoute
   '/lessons': typeof LessonsRoute
   '/membership': typeof MembershipRoute
+  '/practice-facilities': typeof PracticeFacilitiesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/academy': typeof AcademyRoute
   '/contact': typeof ContactRoute
   '/dining': typeof DiningRoute
+  '/elite-prepaid-membership': typeof ElitePrepaidMembershipRoute
   '/events': typeof EventsRoute
   '/golf': typeof GolfRoute
+  '/league': typeof LeagueRoute
+  '/leagues': typeof LeaguesRoute
   '/lessons': typeof LessonsRoute
   '/membership': typeof MembershipRoute
+  '/practice-facilities': typeof PracticeFacilitiesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/academy'
     | '/contact'
     | '/dining'
+    | '/elite-prepaid-membership'
     | '/events'
     | '/golf'
+    | '/league'
+    | '/leagues'
     | '/lessons'
     | '/membership'
+    | '/practice-facilities'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/academy'
     | '/contact'
     | '/dining'
+    | '/elite-prepaid-membership'
     | '/events'
     | '/golf'
+    | '/league'
+    | '/leagues'
     | '/lessons'
     | '/membership'
+    | '/practice-facilities'
   id:
     | '__root__'
     | '/'
+    | '/academy'
     | '/contact'
     | '/dining'
+    | '/elite-prepaid-membership'
     | '/events'
     | '/golf'
+    | '/league'
+    | '/leagues'
     | '/lessons'
     | '/membership'
+    | '/practice-facilities'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AcademyRoute: typeof AcademyRoute
   ContactRoute: typeof ContactRoute
   DiningRoute: typeof DiningRoute
+  ElitePrepaidMembershipRoute: typeof ElitePrepaidMembershipRoute
   EventsRoute: typeof EventsRoute
   GolfRoute: typeof GolfRoute
+  LeagueRoute: typeof LeagueRoute
+  LeaguesRoute: typeof LeaguesRoute
   LessonsRoute: typeof LessonsRoute
   MembershipRoute: typeof MembershipRoute
+  PracticeFacilitiesRoute: typeof PracticeFacilitiesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/practice-facilities': {
+      id: '/practice-facilities'
+      path: '/practice-facilities'
+      fullPath: '/practice-facilities'
+      preLoaderRoute: typeof PracticeFacilitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/membership': {
       id: '/membership'
       path: '/membership'
@@ -135,6 +207,20 @@ declare module '@tanstack/react-router' {
       path: '/lessons'
       fullPath: '/lessons'
       preLoaderRoute: typeof LessonsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leagues': {
+      id: '/leagues'
+      path: '/leagues'
+      fullPath: '/leagues'
+      preLoaderRoute: typeof LeaguesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/league': {
+      id: '/league'
+      path: '/league'
+      fullPath: '/league'
+      preLoaderRoute: typeof LeagueRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/golf': {
@@ -151,6 +237,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/elite-prepaid-membership': {
+      id: '/elite-prepaid-membership'
+      path: '/elite-prepaid-membership'
+      fullPath: '/elite-prepaid-membership'
+      preLoaderRoute: typeof ElitePrepaidMembershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dining': {
       id: '/dining'
       path: '/dining'
@@ -165,6 +258,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/academy': {
+      id: '/academy'
+      path: '/academy'
+      fullPath: '/academy'
+      preLoaderRoute: typeof AcademyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -177,12 +277,17 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AcademyRoute: AcademyRoute,
   ContactRoute: ContactRoute,
   DiningRoute: DiningRoute,
+  ElitePrepaidMembershipRoute: ElitePrepaidMembershipRoute,
   EventsRoute: EventsRoute,
   GolfRoute: GolfRoute,
+  LeagueRoute: LeagueRoute,
+  LeaguesRoute: LeaguesRoute,
   LessonsRoute: LessonsRoute,
   MembershipRoute: MembershipRoute,
+  PracticeFacilitiesRoute: PracticeFacilitiesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

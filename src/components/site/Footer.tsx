@@ -17,8 +17,8 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-6 text-sm leading-relaxed max-w-sm text-cream/65">
-            A fully public 18-hole parkland course in Richmond Hill, Ontario. Tee times, lessons,
-            simulators, tournaments and the Richvale Room — open to everyone.
+            A fully public 18-hole parkland course in Richmond Hill, Ontario. Tee times, academy,
+            dining, practice facilities, leagues and events — open to everyone.
           </p>
           <div className="mt-6 text-sm text-cream/65 space-y-1">
             <div>8755 Bathurst Street, Richmond Hill, ON L4C 9T3</div>
@@ -62,17 +62,19 @@ export function Footer() {
         <FooterCol
           title="Visit"
           items={[
-            ["Course", "/golf"],
-            ["Events & Dining", "/events"],
-            ["Contact", "/contact"],
+            ["Golf", "/golf"],
+            ["Academy", "/academy"],
+            ["Events", "/events"],
+            ["Dining", "/dining"],
           ]}
         />
         <FooterCol
           title="Play"
           items={[
-            ["Membership", "/membership"],
-            ["Academy", "/lessons"],
-            ["Tournaments", "/events"],
+            ["Practice Facilities", "/practice-facilities"],
+            ["League", "/league"],
+            ["Elite Prepaid Membership", "/elite-prepaid-membership"],
+            ["Contact", "/contact"],
           ]}
         />
         <div>

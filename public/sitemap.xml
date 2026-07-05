@@ -7,13 +7,22 @@
     <loc>https://www.richmondhillgolf.com/golf</loc>
   </url>
   <url>
-    <loc>https://www.richmondhillgolf.com/membership</loc>
+    <loc>https://www.richmondhillgolf.com/academy</loc>
   </url>
   <url>
     <loc>https://www.richmondhillgolf.com/events</loc>
   </url>
   <url>
-    <loc>https://www.richmondhillgolf.com/lessons</loc>
+    <loc>https://www.richmondhillgolf.com/dining</loc>
+  </url>
+  <url>
+    <loc>https://www.richmondhillgolf.com/practice-facilities</loc>
+  </url>
+  <url>
+    <loc>https://www.richmondhillgolf.com/league</loc>
+  </url>
+  <url>
+    <loc>https://www.richmondhillgolf.com/elite-prepaid-membership</loc>
   </url>
   <url>
     <loc>https://www.richmondhillgolf.com/contact</loc>
@@ -23,5 +32,11 @@
   </url>
   <url>
     <loc>https://www.richmondhillgolf.com/docs/accessibility-policy.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.richmondhillgolf.com/docs/rhgc-scorecard.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.richmondhillgolf.com/docs/19th-hole-lounge-menu-2026.jpg</loc>
   </url>
 </urlset>

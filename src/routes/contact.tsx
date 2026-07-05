@@ -339,8 +339,8 @@ function ContactPage() {
                 a: "Fully public. All facilities — including the driving range — are open to anyone.",
               },
               {
-                q: "Do you offer memberships?",
-                a: "We offer Prepaid Elite memberships: place a lump sum on account and draw from it for purchases at a 10–25% discount. Funds never expire (3-year roll-over).",
+                q: "Do you offer Elite Prepaid Membership?",
+                a: "Elite Prepaid Membership lets you place a lump sum on account and draw from it for purchases at a 10–25% discount. Funds never expire (3-year roll-over).",
               },
               {
                 q: "How far in advance can I book a tee time?",

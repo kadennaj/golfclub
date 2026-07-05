@@ -6,9 +6,16 @@ import { Logo } from "./Logo";
 
 const NAV = [
   { to: "/golf", label: "Golf", eyebrow: "The Course" },
-  { to: "/membership", label: "Membership", eyebrow: "Prepaid Elite" },
-  { to: "/events", label: "Events & Dining", eyebrow: "Gatherings" },
-  { to: "/lessons", label: "Academy", eyebrow: "Lessons & Simulators" },
+  { to: "/academy", label: "Academy", eyebrow: "Lessons & Clinics" },
+  { to: "/events", label: "Events", eyebrow: "Tournaments" },
+  { to: "/dining", label: "Dining", eyebrow: "19th Hole Lounge" },
+  { to: "/practice-facilities", label: "Practice Facilities", eyebrow: "Range & Simulators" },
+  { to: "/league", label: "League", eyebrow: "Men's & WIG" },
+  {
+    to: "/elite-prepaid-membership",
+    label: "Elite Prepaid Membership",
+    eyebrow: "Member Privileges",
+  },
   { to: "/contact", label: "Contact", eyebrow: "Visit & Inquiries" },
 ] as const;
 
@@ -20,7 +27,10 @@ export function Nav() {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLElement>(null);
   const wasOpenRef = useRef(false);
-  const logoVariant = location.pathname.startsWith("/lessons") ? "academy" : "club";
+  const logoVariant =
+    location.pathname.startsWith("/academy") || location.pathname.startsWith("/lessons")
+      ? "academy"
+      : "club";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -168,7 +178,7 @@ export function Nav() {
               <div>
                 <div className="kicker mb-3 text-cream/45">Richmond Hill Golf Club</div>
                 <p className="max-w-xs text-sm leading-relaxed text-cream/58">
-                  Public golf, dining, tournaments, lessons and simulator play in Richmond Hill.
+                  Public golf, academy, dining, leagues and simulator play in Richmond Hill.
                 </p>
               </div>
               <div className="grid gap-3 sm:min-w-48">

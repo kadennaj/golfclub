@@ -36,9 +36,9 @@ function EventsPage() {
   return (
     <>
       <PageHero
-        kicker="Events & Dining"
-        title="Tournament days. Dinner nights. Celebrations."
-        intro="Real hospitality, from the first tee to the final toast."
+        kicker="Events"
+        title="Tournament days. Weddings. Celebrations."
+        intro="Real hospitality, from the first planning call to the final toast."
         poster={eventGolf01}
       />
 
@@ -78,8 +78,8 @@ function EventsPage() {
                 "Bag drop, scoring, contests, carts, sponsor signs and guest movement handled cleanly.",
               ],
               [
-                "Dining",
-                "The 19th Hole, patios and Richvale Room support everything from lunches to banquets.",
+                "Food & Beverage",
+                "The kitchen, bar and Richvale Room support lunches, receptions and banquets.",
               ],
               ["Event Day", "Staff stay close so your guests can settle in and enjoy the day."],
             ].map(([t, d]) => (
@@ -92,7 +92,7 @@ function EventsPage() {
         </div>
       </section>
 
-      {/* Combined offerings */}
+      {/* Event offerings */}
       <section className="bg-cream pb-28 md:pb-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-16 lg:grid-cols-4">
           {[
@@ -110,9 +110,9 @@ function EventsPage() {
             },
             {
               img: eventDinner03,
-              k: "Dining",
-              t: "The 19th Hole and patios.",
-              d: "A relaxed post-round setting for meals, drinks and smaller group gatherings.",
+              k: "Receptions",
+              t: "Food, drinks and flow.",
+              d: "A relaxed hospitality plan for meals, cocktail service and smaller group gatherings.",
             },
             {
               img: eventGolf04,

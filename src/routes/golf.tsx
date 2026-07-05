@@ -64,6 +64,30 @@ function GolfPage() {
         </div>
       </section>
 
+      <section className="bg-cream pb-28 md:pb-36">
+        <div className="mx-auto max-w-[1480px] px-5 md:px-10">
+          <div className="reveal grid gap-10 border-y border-charcoal/15 py-10 md:grid-cols-[0.8fr_1fr_auto] md:items-center">
+            <div>
+              <div className="kicker text-forest mb-3">Scorecard</div>
+              <h2 className="font-serif text-4xl text-charcoal md:text-5xl">
+                Take the card with you.
+              </h2>
+            </div>
+            <p className="max-w-2xl text-charcoal/65 leading-relaxed">
+              Open the Richmond Hill Golf Club scorecard as a PDF before your round.
+            </p>
+            <a
+              href="/docs/rhgc-scorecard.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex justify-center bg-forest px-7 py-4 text-xs uppercase tracking-[0.24em] text-cream transition-colors hover:bg-charcoal"
+            >
+              View Scorecard
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-charcoal text-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 mb-16">
           <SectionHeading

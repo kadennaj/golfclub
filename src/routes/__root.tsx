@@ -76,7 +76,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "A fully public 18-hole parkland golf course in Richmond Hill, Ontario. Tee times, lessons, simulators, tournaments and the Richvale Room — open to everyone.",
+          "A fully public 18-hole parkland golf course in Richmond Hill, Ontario. Tee times, academy, dining, practice facilities, leagues and events — open to everyone.",
       },
       { property: "og:title", content: "Richmond Hill Golf Club" },
       {
