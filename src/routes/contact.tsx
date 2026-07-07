@@ -29,11 +29,6 @@ const DEPARTMENTS: { dept: string; phone?: string; email?: string; note?: string
     note: "Contact the Proshop for general inquiries.",
   },
   {
-    dept: "Tee Times",
-    phone: "(905) 889-4653",
-    note: "Bookings up to 4 weeks in advance by phone or online.",
-  },
-  {
     dept: "Golf Learning Centre / Lessons",
     phone: "(905) 889-4653 ext. 448",
     email: "learningcentre@richmondhillgolf.com",
@@ -43,17 +38,6 @@ const DEPARTMENTS: { dept: string; phone?: string; email?: string; note?: string
     phone: "(905) 889-4653 ext. 425",
     email: "lbodanis@richmondhillgolf.com",
     note: "Lorie Bodanis — Event Manager",
-  },
-  {
-    dept: "Employment",
-    phone: "(905) 889-4653 ext. 422",
-    email: "dyoung@richmondhillgolf.com",
-    note: "Doug Young — Club Director",
-  },
-  {
-    dept: "Turf Maintenance",
-    phone: "(905) 731-7541",
-    note: "Maintenance department direct line.",
   },
 ];
 
@@ -191,7 +175,7 @@ function ContactPage() {
           <h2 className="font-serif text-4xl md:text-6xl max-w-3xl text-balance mb-16">
             Reach the right team directly.
           </h2>
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-10 md:grid-cols-3">
             {DEPARTMENTS.map((d) => (
               <div key={d.dept} className="reveal border-t border-cream/15 pt-6">
                 <div className="font-serif text-2xl mb-3">{d.dept}</div>
