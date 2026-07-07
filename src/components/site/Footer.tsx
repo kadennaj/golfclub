@@ -4,15 +4,6 @@ import { Logo } from "./Logo";
 export function Footer() {
   return (
     <footer className="bg-charcoal text-cream/80">
-      <div className="aspect-[16/6] md:aspect-[21/6] w-full overflow-hidden border-y border-white/5">
-        <iframe
-          title="Map to Richmond Hill Golf Club"
-          src="https://www.google.com/maps?q=8755+Bathurst+Street+Richmond+Hill+ON&output=embed"
-          loading="lazy"
-          className="w-full h-full grayscale-[0.6] contrast-110 opacity-90"
-        />
-      </div>
-
       <div className="mx-auto max-w-[1480px] px-5 md:px-10 py-20 grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <Logo />

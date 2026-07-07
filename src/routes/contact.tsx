@@ -129,6 +129,17 @@ function ContactPage() {
         poster={HOLES[17].image}
       />
 
+      <section className="bg-cream">
+        <div className="aspect-[16/6] md:aspect-[21/6] w-full overflow-hidden border-b border-charcoal/10">
+          <iframe
+            title="Map to Richmond Hill Golf Club"
+            src="https://www.google.com/maps?q=8755+Bathurst+Street+Richmond+Hill+ON&output=embed"
+            loading="lazy"
+            className="w-full h-full grayscale-[0.35] contrast-110"
+          />
+        </div>
+      </section>
+
       <section className="bg-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-16 lg:grid-cols-2">
           <div className="space-y-10">

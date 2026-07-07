@@ -58,6 +58,51 @@ function EventsPage() {
         </div>
       </section>
 
+      <section className="bg-cream py-28 md:py-40">
+        <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-12 lg:gap-20 lg:grid-cols-2 items-center">
+          <div className="reveal relative aspect-[4/5] overflow-hidden image-polish">
+            <img
+              src={eventDinner03}
+              alt="Event dining at Richmond Hill Golf Club"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover scale-105 hover:scale-110 transition-transform duration-[1600ms]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 glass p-5 text-cream">
+              <div className="kicker text-gold mb-2">Up To 200 Guests</div>
+              <div className="font-serif text-3xl leading-none">
+                Forest views. Polished service.
+              </div>
+            </div>
+          </div>
+          <div>
+            <SectionHeading
+              kicker="Weddings & Private Events"
+              title="Events and dining, together."
+              intro="Tournament receptions, private dinners, weddings and patio service under one roof."
+            />
+            <div className="reveal mt-10 grid grid-cols-3 gap-3">
+              {[eventDinner01, eventGolf03, eventDinner02].map((src, i) => (
+                <div key={i} className="aspect-square overflow-hidden">
+                  <img
+                    src={src}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+              ))}
+            </div>
+            <Link
+              to="/contact"
+              className="reveal mt-10 inline-flex cursor-pointer items-center px-7 py-4 text-xs tracking-[0.24em] uppercase bg-forest text-cream hover:bg-charcoal transition-colors"
+            >
+              Plan Your Event
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* How we help */}
       <section className="bg-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
