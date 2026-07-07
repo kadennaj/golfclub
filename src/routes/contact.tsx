@@ -102,6 +102,12 @@ const POLICIES = [
   },
 ];
 
+const MAIN_PHONE = "(905) 889-4653";
+
+function formatTeamPhone(ext?: string) {
+  return ext ? `${MAIN_PHONE} ext. ${ext}` : MAIN_PHONE;
+}
+
 function ContactPage() {
   useReveal();
   return (
@@ -214,13 +220,16 @@ function ContactPage() {
                 {TEAM_CONTACTS.map((person) => (
                   <div key={person.email} className="reveal border-t border-charcoal/15 pt-5">
                     <div className="font-serif text-2xl text-charcoal">{person.name}</div>
-                    <div className="mt-1 text-sm text-charcoal/60">
-                      {person.title}
-                      {person.ext ? ` - Ext. ${person.ext}` : ""}
-                    </div>
+                    <div className="mt-1 text-sm text-charcoal/60">{person.title}</div>
+                    <a
+                      href="tel:9058894653"
+                      className="mt-3 block text-sm text-charcoal/70 hover:text-forest transition-colors"
+                    >
+                      {formatTeamPhone(person.ext)}
+                    </a>
                     <a
                       href={`mailto:${person.email}`}
-                      className="mt-3 inline-block text-sm text-forest hover:text-charcoal transition-colors"
+                      className="mt-1 inline-block text-sm text-forest hover:text-charcoal transition-colors"
                     >
                       {person.email}
                     </a>
