@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ChevronDown } from "lucide-react";
 import { useReveal } from "../hooks/use-reveal";
-import { SectionHeading } from "../components/site/SectionHeading";
 import { ExperienceTile } from "../components/site/ExperienceTile";
 import { HOLES } from "../data/holes";
 import rhgcLogo from "../assets/brand/rhgc-logo.png";
@@ -57,14 +56,8 @@ function HomePage() {
       </section>
 
       {/* EXPERIENCE GRID */}
-      <section className="bg-cream pb-28 md:pb-40">
+      <section className="bg-cream py-24 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
-          <SectionHeading
-            kicker="The Experience"
-            title="Pick your pace."
-            intro="Choose where you want to go next."
-            className="mb-20 md:mb-28"
-          />
           <div className="space-y-24 md:space-y-36">
             <ExperienceTile
               index="01"
