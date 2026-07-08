@@ -5,7 +5,7 @@ import { SectionHeading } from "../components/site/SectionHeading";
 import { ExperienceTile } from "../components/site/ExperienceTile";
 import { HOLES } from "../data/holes";
 import rhgcLogo from "../assets/brand/rhgc-logo.png";
-import heroAerial from "../assets/hero-rhgc-aerial.jpg";
+import homeHero from "../assets/home-hero-8-006.jpg";
 import homeCourse from "../assets/home-course-5-006.jpg";
 import eventGolf02 from "../assets/events-real/event-golf-02.jpg";
 import eventGolf03 from "../assets/events-real/event-golf-03.jpg";
@@ -27,21 +27,22 @@ function HomePage() {
       {/* HERO */}
       <section className="relative min-h-[100svh] overflow-hidden bg-charcoal text-cream">
         <img
-          src={heroAerial}
+          src={homeHero}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[52%_50%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/5 to-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/0 to-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/12 to-black/5" />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-charcoal/65 to-transparent" />
 
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1480px] flex-col justify-end px-5 pb-24 pt-32 md:px-10 md:pb-28">
           <h1 className="sr-only">Richmond Hill Golf Club</h1>
-          <div className="max-w-sm">
+          <div className="max-w-md border-l border-cream/25 pl-6">
             <img
               src={rhgcLogo}
               alt="Richmond Hill Golf Club"
-              className="reveal w-44 object-contain brightness-0 invert drop-shadow-[0_12px_28px_rgba(0,0,0,0.45)] md:w-56"
+              className="reveal w-44 object-contain brightness-0 invert drop-shadow-[0_14px_34px_rgba(0,0,0,0.5)] md:w-56"
             />
             <p className="reveal mt-5 max-w-xs text-xs uppercase tracking-[0.32em] text-cream/90">
               Welcome to Richmond Hill Golf Club

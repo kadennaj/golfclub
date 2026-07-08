@@ -1,17 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
 import { useReveal } from "../hooks/use-reveal";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Calendar,
-  Smartphone,
-  Users,
-  FileText,
-  ChevronRight,
-} from "lucide-react";
-import contactHero from "../assets/contact-hero-8-006.jpg";
+import { PageHero } from "../components/site/PageHero";
+import { Mail, Phone, MapPin, Calendar, Smartphone, Users, FileText } from "lucide-react";
+import { HOLES } from "../data/holes";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -121,51 +112,12 @@ function ContactPage() {
   useReveal();
   return (
     <>
-      <section className="relative min-h-[78svh] overflow-hidden bg-charcoal text-cream">
-        <img
-          src={contactHero}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-center ken-burns"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/10" />
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-charcoal/80 to-transparent" />
-        <div className="relative z-10 mx-auto flex min-h-[78svh] max-w-[1480px] flex-col justify-end px-5 pb-14 pt-32 md:px-10 md:pb-20">
-          <div className="reveal kicker mb-5 flex items-center gap-3 text-gold">
-            <Link to="/" className="transition-colors hover:text-cream">
-              Home
-            </Link>
-            <ChevronRight className="h-3 w-3" />
-            <span>Contact</span>
-          </div>
-          <div className="grid items-end gap-10 lg:grid-cols-[1fr_0.5fr]">
-            <div>
-              <h1 className="reveal max-w-[11ch] text-balance font-serif text-[clamp(3rem,7vw,7rem)] leading-[0.96]">
-                Visit, call, or send a note.
-              </h1>
-              <p className="reveal mt-6 max-w-xl text-base leading-relaxed text-cream/82 md:text-lg">
-                Reach the right department directly, or call the main line and the team will route
-                your inquiry.
-              </p>
-            </div>
-            <div className="reveal border-l border-cream/25 pl-6 text-sm text-cream/78 max-lg:border-l-0 max-lg:border-t max-lg:pl-0 max-lg:pt-6">
-              <div className="kicker mb-4 text-gold">Richmond Hill Golf Club</div>
-              <div className="space-y-3 leading-relaxed">
-                <div>8755 Bathurst Street, Richmond Hill, ON L4C 0H4</div>
-                <a href="tel:9058894653" className="block transition-colors hover:text-gold">
-                  (905) 889-4653
-                </a>
-                <a
-                  href="mailto:info@richmondhillgolf.com"
-                  className="block transition-colors hover:text-gold"
-                >
-                  info@richmondhillgolf.com
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        kicker="Contact"
+        title="Visit, call, or send a note."
+        intro="Reach the right department directly, or call the main line and the team will route your inquiry."
+        poster={HOLES[17].image}
+      />
 
       <section className="bg-cream py-28 md:py-36">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-16 lg:grid-cols-2">
