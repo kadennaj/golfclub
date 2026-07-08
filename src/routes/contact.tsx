@@ -1,8 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useReveal } from "../hooks/use-reveal";
-import { PageHero } from "../components/site/PageHero";
-import { Mail, Phone, MapPin, Calendar, Smartphone, Users, FileText } from "lucide-react";
-import { HOLES } from "../data/holes";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  Smartphone,
+  Users,
+  FileText,
+  ChevronRight,
+} from "lucide-react";
+import contactHero from "../assets/contact-hero-8-006.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -11,7 +20,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Visit, call, or send a note. Reach the Proshop, Golf Learning Centre, Events team or Club Director at Richmond Hill Golf Club.",
+          "Visit, call, or send a note. Reach the Proshop, Richmond Hill Golf Academy, Events team or Club Director at Richmond Hill Golf Club.",
       },
       { property: "og:title", content: "Contact — Richmond Hill Golf Club" },
       { property: "og:description", content: "Visit, call, or send a note." },
@@ -29,9 +38,9 @@ const DEPARTMENTS: { dept: string; phone?: string; email?: string; note?: string
     note: "Contact the Proshop for general inquiries.",
   },
   {
-    dept: "Golf Learning Centre / Lessons",
+    dept: "Richmond Hill Golf Academy",
     phone: "(905) 889-4653 ext. 448",
-    email: "learningcentre@richmondhillgolf.com",
+    email: "academy@richmondhillgolf.com",
   },
   {
     dept: "Events & Tournaments",
@@ -57,7 +66,7 @@ const TEAM_CONTACTS = [
   },
   {
     name: "Samantha Cooper",
-    title: "Front of House F&B Manager",
+    title: "Front of the House F&B Manager",
     ext: "410",
     email: "scooper@richmondhillgolf.com",
   },
@@ -112,21 +121,49 @@ function ContactPage() {
   useReveal();
   return (
     <>
-      <PageHero
-        kicker="Contact"
-        title="Visit, call, or send a note."
-        intro="We respond personally — usually within the day. Reach the right department directly below."
-        poster={HOLES[17].image}
-      />
-
-      <section className="bg-cream">
-        <div className="aspect-[16/6] md:aspect-[21/6] w-full overflow-hidden border-b border-charcoal/10">
-          <iframe
-            title="Map to Richmond Hill Golf Club"
-            src="https://www.google.com/maps?q=8755+Bathurst+Street+Richmond+Hill+ON&output=embed"
-            loading="lazy"
-            className="w-full h-full grayscale-[0.35] contrast-110"
-          />
+      <section className="relative min-h-[78svh] overflow-hidden bg-charcoal text-cream">
+        <img
+          src={contactHero}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-center ken-burns"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/10" />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-charcoal/80 to-transparent" />
+        <div className="relative z-10 mx-auto flex min-h-[78svh] max-w-[1480px] flex-col justify-end px-5 pb-14 pt-32 md:px-10 md:pb-20">
+          <div className="reveal kicker mb-5 flex items-center gap-3 text-gold">
+            <Link to="/" className="transition-colors hover:text-cream">
+              Home
+            </Link>
+            <ChevronRight className="h-3 w-3" />
+            <span>Contact</span>
+          </div>
+          <div className="grid items-end gap-10 lg:grid-cols-[1fr_0.5fr]">
+            <div>
+              <h1 className="reveal max-w-[11ch] text-balance font-serif text-[clamp(3rem,7vw,7rem)] leading-[0.96]">
+                Visit, call, or send a note.
+              </h1>
+              <p className="reveal mt-6 max-w-xl text-base leading-relaxed text-cream/82 md:text-lg">
+                Reach the right department directly, or call the main line and the team will route
+                your inquiry.
+              </p>
+            </div>
+            <div className="reveal border-l border-cream/25 pl-6 text-sm text-cream/78 max-lg:border-l-0 max-lg:border-t max-lg:pl-0 max-lg:pt-6">
+              <div className="kicker mb-4 text-gold">Richmond Hill Golf Club</div>
+              <div className="space-y-3 leading-relaxed">
+                <div>8755 Bathurst Street, Richmond Hill, ON L4C 0H4</div>
+                <a href="tel:9058894653" className="block transition-colors hover:text-gold">
+                  (905) 889-4653
+                </a>
+                <a
+                  href="mailto:info@richmondhillgolf.com"
+                  className="block transition-colors hover:text-gold"
+                >
+                  info@richmondhillgolf.com
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -134,7 +171,7 @@ function ContactPage() {
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-16 lg:grid-cols-2">
           <div className="space-y-10">
             {[
-              { Icon: MapPin, k: "Visit", l: "8755 Bathurst Street\nRichmond Hill, ON L4C 9T3" },
+              { Icon: MapPin, k: "Visit", l: "8755 Bathurst Street\nRichmond Hill, ON L4C 0H4" },
               { Icon: Phone, k: "Main Line", l: "(905) 889-4653" },
               {
                 Icon: Mail,
@@ -212,9 +249,8 @@ function ContactPage() {
         <div className="mx-auto max-w-[1480px] px-5 md:px-10">
           <div className="grid gap-14 lg:grid-cols-[1fr_0.72fr]">
             <div>
-              <div className="kicker text-forest mb-4">Our Team</div>
-              <h2 className="font-serif text-4xl md:text-6xl text-charcoal mb-14 max-w-3xl text-balance">
-                Current staff contacts.
+              <h2 className="font-serif text-4xl md:text-6xl text-charcoal mb-14 max-w-3xl text-balance uppercase tracking-[0.08em]">
+                Our Team
               </h2>
               <div className="grid gap-x-8 gap-y-8 md:grid-cols-2">
                 {TEAM_CONTACTS.map((person) => (
@@ -279,6 +315,30 @@ function ContactPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream pb-28 md:pb-36">
+        <div className="mx-auto max-w-[1480px] px-5 md:px-10">
+          <div className="reveal mb-8 flex flex-col gap-3 border-t border-charcoal/15 pt-8 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div className="kicker mb-3 text-forest">Find Us</div>
+              <h2 className="font-serif text-3xl text-charcoal md:text-5xl">
+                8755 Bathurst Street.
+              </h2>
+            </div>
+            <p className="max-w-md text-sm leading-relaxed text-charcoal/60">
+              Richmond Hill, ON L4C 0H4. Parking is available on site beside the clubhouse.
+            </p>
+          </div>
+          <div className="reveal aspect-[16/9] w-full overflow-hidden border border-charcoal/10 md:aspect-[21/7]">
+            <iframe
+              title="Map to Richmond Hill Golf Club"
+              src="https://www.google.com/maps?q=8755+Bathurst+Street+Richmond+Hill+ON+L4C+0H4&output=embed"
+              loading="lazy"
+              className="h-full w-full grayscale-[0.25] contrast-110"
+            />
           </div>
         </div>
       </section>
