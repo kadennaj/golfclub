@@ -6,6 +6,7 @@ import { ExperienceTile } from "../components/site/ExperienceTile";
 import { HOLES } from "../data/holes";
 import rhgcLogo from "../assets/brand/rhgc-logo.png";
 import heroAerial from "../assets/hero-rhgc-aerial.jpg";
+import homeCourse from "../assets/home-course-5-006.jpg";
 import eventGolf02 from "../assets/events-real/event-golf-02.jpg";
 import eventGolf03 from "../assets/events-real/event-golf-03.jpg";
 import eventDinner03 from "../assets/events-real/event-dinner-03.jpg";
@@ -67,16 +68,16 @@ function HomePage() {
             <ExperienceTile
               index="01"
               kicker="The Course"
-              title="Eighteen parkland holes."
-              body="Three tee decks, thoughtful angles and just enough trouble to keep the round honest."
-              image={HOLES[7].image}
+              title="Championship Golf in the heart of the GTA."
+              body="Three tee decks, 18 challenging holes suitable for all skill levels."
+              image={homeCourse}
               to="/golf"
             />
             <ExperienceTile
               index="02"
-              kicker="Academy"
-              title="A swing worth returning to."
-              body="Private lessons, clinics, club fitting and simulator sessions with CPGA professionals."
+              kicker="Golf Academy"
+              title="Our Team is here to make you better."
+              body="Private lessons, clinics."
               image={rangeFour}
               to="/academy"
               reverse
@@ -84,8 +85,8 @@ function HomePage() {
             <ExperienceTile
               index="03"
               kicker="Events"
-              title="Tournament days and celebrations."
-              body="Corporate golf, charity events, weddings and private gatherings with polished service."
+              title="Tournaments are what we do best."
+              body="Corporate days, charity events & small group outings, all with top notch service."
               image={eventGolf02}
               to="/events"
             />

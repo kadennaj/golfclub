@@ -8,11 +8,11 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-6 text-sm leading-relaxed max-w-sm text-cream/65">
-            A fully public 18-hole parkland course in Richmond Hill, Ontario. Tee times, academy,
-            dining, practice facilities, leagues and events — open to everyone.
+            18-hole Public Golf Course in Richmond Hill, Ontario. Tee times, golf academy, dining,
+            practice facilities, leagues and events — open to everyone.
           </p>
           <div className="mt-6 text-sm text-cream/65 space-y-1">
-            <div>8755 Bathurst Street, Richmond Hill, ON L4C 9T3</div>
+            <div>8755 Bathurst Street, Richmond Hill, ON L4C 0H4</div>
             <div>
               <a href="tel:9058894653" className="hover:text-gold transition-colors">
                 (905) 889-4653
@@ -20,30 +20,12 @@ export function Footer() {
             </div>
             <div className="pt-3 space-y-1 text-cream/55">
               <div>
-                Lessons · ext. 448 ·{" "}
+                General Inquiries -{" "}
                 <a
-                  href="mailto:learningcentre@richmondhillgolf.com"
+                  href="mailto:info@richmondhillgolf.com"
                   className="hover:text-gold transition-colors"
                 >
-                  learningcentre@richmondhillgolf.com
-                </a>
-              </div>
-              <div>
-                Events ·{" "}
-                <a
-                  href="mailto:lbodanis@richmondhillgolf.com"
-                  className="hover:text-gold transition-colors"
-                >
-                  lbodanis@richmondhillgolf.com
-                </a>
-              </div>
-              <div>
-                Employment · ext. 422 ·{" "}
-                <a
-                  href="mailto:dyoung@richmondhillgolf.com"
-                  className="hover:text-gold transition-colors"
-                >
-                  dyoung@richmondhillgolf.com
+                  info@richmondhillgolf.com
                 </a>
               </div>
             </div>
@@ -104,7 +86,7 @@ export function Footer() {
       <div className="border-t border-white/5">
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 py-6 flex flex-wrap gap-3 justify-between text-[0.7rem] tracking-[0.18em] uppercase text-cream/45">
           <div>© {new Date().getFullYear()} Richmond Hill Golf Club</div>
-          <div>8755 Bathurst Street · Richmond Hill, Ontario</div>
+          <div>8755 Bathurst Street · Richmond Hill, ON L4C 0H4</div>
         </div>
       </div>
     </footer>
