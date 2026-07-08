@@ -7,14 +7,18 @@ import { Logo } from "./Logo";
 const NAV = [
   { to: "/golf", label: "Golf", eyebrow: "The Course" },
   { to: "/academy", label: "Academy", eyebrow: "Lessons & Clinics" },
-  { to: "/events", label: "Events", eyebrow: "Tournaments" },
-  { to: "/dining", label: "Dining", eyebrow: "19th Hole Lounge" },
-  { to: "/practice-facilities", label: "Practice Facilities", eyebrow: "Range & Simulators" },
-  { to: "/league", label: "League", eyebrow: "Men's & WIG" },
+  { to: "/events", label: "Events", eyebrow: "Tournaments and Special Occasions" },
+  { to: "/dining", label: "Dining", eyebrow: "19th Hole Lounge and Patios" },
+  {
+    to: "/practice-facilities",
+    label: "Practice Facilities",
+    eyebrow: "Driving Range and Short Game",
+  },
+  { to: "/league", label: "Leagues", eyebrow: "Men's and Ladies" },
   {
     to: "/elite-prepaid-membership",
-    label: "Elite Prepaid Membership",
-    eyebrow: "Member Privileges",
+    label: "Membership",
+    eyebrow: "Elite Prepaid Membership",
   },
   { to: "/contact", label: "Contact", eyebrow: "Visit & Inquiries" },
 ] as const;
