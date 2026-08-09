@@ -119,6 +119,7 @@ export function Nav() {
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!open}
+        inert={!open}
       >
         <button
           className="absolute inset-0 cursor-default bg-charcoal/62 backdrop-blur-sm transition-opacity duration-500"
@@ -165,11 +166,11 @@ export function Nav() {
                     <span className="pt-1 text-[0.65rem] tracking-[0.22em] text-cream/38 transition-colors duration-300 group-hover:text-gold/75">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span>
-                      <span className="block font-serif text-4xl leading-none md:text-5xl">
+                    <span className="min-w-0">
+                      <span className="block break-words font-serif text-3xl leading-none sm:text-4xl md:text-5xl">
                         {n.label}
                       </span>
-                      <span className="mt-2 block text-[0.68rem] uppercase tracking-[0.24em] text-cream/45 transition-colors duration-300 group-hover:text-cream/75">
+                      <span className="mt-2 block break-words pr-1 text-[0.64rem] leading-relaxed uppercase tracking-[0.18em] text-cream/45 transition-colors duration-300 group-hover:text-cream/75 sm:text-[0.68rem] sm:tracking-[0.24em]">
                         {n.eyebrow}
                       </span>
                     </span>
@@ -196,7 +197,7 @@ export function Nav() {
                   Book Tee Time
                 </a>
                 <a
-                  href="https://richmondhillgolf.clubhouseonline-e3.org/"
+                  href="https://richmondhillgolf.clubhouseonline-e3.org/default.aspx"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}

@@ -3,6 +3,7 @@ import { useReveal } from "../hooks/use-reveal";
 import { PageHero } from "../components/site/PageHero";
 import { SectionHeading } from "../components/site/SectionHeading";
 import { HOLES } from "../data/holes";
+import { siteUrl } from "../lib/site";
 
 export const Route = createFileRoute("/elite-prepaid-membership")({
   head: () => ({
@@ -20,13 +21,13 @@ export const Route = createFileRoute("/elite-prepaid-membership")({
       },
       {
         property: "og:url",
-        content: "https://www.richmondhillgolf.com/elite-prepaid-membership",
+        content: siteUrl("/elite-prepaid-membership"),
       },
     ],
     links: [
       {
         rel: "canonical",
-        href: "https://www.richmondhillgolf.com/elite-prepaid-membership",
+        href: siteUrl("/elite-prepaid-membership"),
       },
     ],
   }),

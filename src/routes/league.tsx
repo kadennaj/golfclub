@@ -5,6 +5,7 @@ import { SectionHeading } from "../components/site/SectionHeading";
 import eventGolf03 from "../assets/events-real/event-golf-03.jpg";
 import eventDinner02 from "../assets/events-real/event-dinner-02.jpg";
 import { HOLES } from "../data/holes";
+import { phoneHref, siteUrl } from "../lib/site";
 
 export const Route = createFileRoute("/league")({
   head: () => ({
@@ -20,9 +21,9 @@ export const Route = createFileRoute("/league")({
         content:
           "Weekly league golf, season-long points races, prizes, banquets and Golf Genius scoring.",
       },
-      { property: "og:url", content: "https://www.richmondhillgolf.com/league" },
+      { property: "og:url", content: siteUrl("/league") },
     ],
-    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/league" }],
+    links: [{ rel: "canonical", href: siteUrl("/league") }],
   }),
   component: LeaguePage,
 });
@@ -159,7 +160,7 @@ function LeaguePage() {
             <a href="mailto:jrodgers@richmondhillgolf.com" className="hover:text-gold">
               jrodgers@richmondhillgolf.com
             </a>
-            <a href="tel:9058894653412" className="hover:text-gold">
+            <a href={phoneHref("412")} className="hover:text-gold">
               (905) 889-4653 Ext. 412
             </a>
           </div>

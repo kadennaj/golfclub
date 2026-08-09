@@ -11,11 +11,15 @@ import eventGolf03 from "../assets/events-real/event-golf-03.jpg";
 import eventDinner03 from "../assets/events-real/event-dinner-03.jpg";
 import rangeFour from "../assets/academy/range-4.jpg";
 import academyBays from "../assets/academy/academy-bays.jpg";
+import { siteUrl } from "../lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [{ property: "og:url", content: "https://www.richmondhillgolf.com/" }],
-    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/" }],
+    meta: [
+      { title: "Richmond Hill Golf Club — Public Golf in Richmond Hill, Ontario" },
+      { property: "og:url", content: siteUrl() },
+    ],
+    links: [{ rel: "canonical", href: siteUrl() }],
   }),
   component: HomePage,
 });

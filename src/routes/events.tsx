@@ -10,6 +10,7 @@ import eventDinner01 from "../assets/events-real/event-dinner-01.jpg";
 import eventDinner02 from "../assets/events-real/event-dinner-02.jpg";
 import eventDinner03 from "../assets/events-real/event-dinner-03.jpg";
 import eventDinner04 from "../assets/events-real/event-dinner-04.jpg";
+import { siteUrl } from "../lib/site";
 
 export const Route = createFileRoute("/events")({
   head: () => ({
@@ -25,9 +26,9 @@ export const Route = createFileRoute("/events")({
         property: "og:description",
         content: "A unique set of services and amenities for corporate, charity and social events.",
       },
-      { property: "og:url", content: "https://www.richmondhillgolf.com/events" },
+      { property: "og:url", content: siteUrl("/events") },
     ],
-    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/events" }],
+    links: [{ rel: "canonical", href: siteUrl("/events") }],
   }),
   component: EventsPage,
 });

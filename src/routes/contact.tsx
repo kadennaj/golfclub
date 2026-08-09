@@ -3,6 +3,7 @@ import { useReveal } from "../hooks/use-reveal";
 import { PageHero } from "../components/site/PageHero";
 import { Mail, Phone, MapPin, Calendar, Smartphone, Users, FileText } from "lucide-react";
 import { HOLES } from "../data/holes";
+import { MAIN_PHONE_HREF, phoneHref, siteUrl } from "../lib/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -15,28 +16,37 @@ export const Route = createFileRoute("/contact")({
       },
       { property: "og:title", content: "Contact — Richmond Hill Golf Club" },
       { property: "og:description", content: "Visit, call, or send a note." },
-      { property: "og:url", content: "https://www.richmondhillgolf.com/contact" },
+      { property: "og:url", content: siteUrl("/contact") },
     ],
-    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/contact" }],
+    links: [{ rel: "canonical", href: siteUrl("/contact") }],
   }),
   component: ContactPage,
 });
 
-const DEPARTMENTS: { dept: string; phone?: string; email?: string; note?: string }[] = [
+const DEPARTMENTS: {
+  dept: string;
+  phone?: string;
+  phoneExt?: string;
+  email?: string;
+  note?: string;
+}[] = [
   {
     dept: "Proshop & General Inquiries",
     phone: "(905) 889-4653 ext. 422",
+    phoneExt: "422",
     email: "info@richmondhillgolf.com",
     note: "Contact the Proshop for general inquiries.",
   },
   {
     dept: "Richmond Hill Golf Academy",
     phone: "(905) 889-4653 ext. 448",
+    phoneExt: "448",
     email: "academy@richmondhillgolf.com",
   },
   {
     dept: "Events & Tournaments",
     phone: "(905) 889-4653 ext. 425",
+    phoneExt: "425",
     email: "lbodanis@richmondhillgolf.com",
     note: "Lorie Bodanis — Event Manager",
   },
@@ -124,22 +134,42 @@ function ContactPage() {
         <div className="mx-auto max-w-[1480px] px-5 md:px-10 grid gap-16 lg:grid-cols-2">
           <div className="space-y-10">
             {[
-              { Icon: MapPin, k: "Visit", l: "8755 Bathurst Street\nRichmond Hill, ON L4C 0H4" },
-              { Icon: Phone, k: "Main Line", l: "(905) 889-4653" },
+              {
+                Icon: MapPin,
+                k: "Visit",
+                l: "8755 Bathurst Street\nRichmond Hill, ON L4C 0H4",
+                href: "https://www.google.com/maps/dir/?api=1&destination=8755+Bathurst+Street+Richmond+Hill+ON+L4C+0H4",
+                external: true,
+              },
+              { Icon: Phone, k: "Main Line", l: "(905) 889-4653", href: MAIN_PHONE_HREF },
               {
                 Icon: Mail,
                 k: "General Inquiries",
                 l: "info@richmondhillgolf.com\nProshop ext. 422",
+                href: "mailto:info@richmondhillgolf.com",
               },
-              { Icon: Calendar, k: "Book a Tee Time", l: "richmond-hill-golf.book.teeitup.com" },
-            ].map(({ Icon, k, l }) => (
+              {
+                Icon: Calendar,
+                k: "Book a Tee Time",
+                l: "richmond-hill-golf.book.teeitup.com",
+                href: "https://richmond-hill-golf.book.teeitup.com/",
+                external: true,
+              },
+            ].map(({ Icon, k, l, href, external }) => (
               <div key={k} className="reveal flex gap-5">
                 <div className="h-12 w-12 rounded-full border border-forest/30 flex items-center justify-center text-forest shrink-0">
                   <Icon className="h-5 w-5" />
                 </div>
                 <div>
                   <div className="kicker text-forest mb-2">{k}</div>
-                  <div className="font-serif text-2xl text-charcoal whitespace-pre-line">{l}</div>
+                  <a
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
+                    className="font-serif text-2xl text-charcoal whitespace-pre-line transition-colors hover:text-forest"
+                  >
+                    {l}
+                  </a>
                 </div>
               </div>
             ))}
@@ -155,7 +185,7 @@ function ContactPage() {
                 Email Proshop
               </a>
               <a
-                href="tel:9058894653"
+                href={MAIN_PHONE_HREF}
                 className="inline-flex justify-center border border-charcoal/25 px-6 py-4 text-xs uppercase tracking-[0.24em] text-charcoal transition-colors hover:border-forest hover:text-forest"
               >
                 Call Main Line
@@ -177,7 +207,7 @@ function ContactPage() {
                 <div className="font-serif text-2xl mb-3">{d.dept}</div>
                 {d.phone && (
                   <a
-                    href={`tel:${d.phone.replace(/[^0-9]/g, "")}`}
+                    href={phoneHref(d.phoneExt)}
                     className="block text-cream/80 hover:text-gold transition-colors text-sm"
                   >
                     {d.phone}
@@ -211,7 +241,7 @@ function ContactPage() {
                     <div className="font-serif text-2xl text-charcoal">{person.name}</div>
                     <div className="mt-1 text-sm text-charcoal/60">{person.title}</div>
                     <a
-                      href="tel:9058894653"
+                      href={phoneHref(person.ext)}
                       className="mt-3 block text-sm text-charcoal/70 hover:text-forest transition-colors"
                     >
                       {formatTeamPhone(person.ext)}

@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
+import { MAIN_PHONE_HREF } from "../../lib/site";
 
 export function Footer() {
   return (
@@ -14,7 +15,7 @@ export function Footer() {
           <div className="mt-6 text-sm text-cream/65 space-y-1">
             <div>8755 Bathurst Street, Richmond Hill, ON L4C 0H4</div>
             <div>
-              <a href="tel:9058894653" className="hover:text-gold transition-colors">
+              <a href={MAIN_PHONE_HREF} className="hover:text-gold transition-colors">
                 (905) 889-4653
               </a>
             </div>

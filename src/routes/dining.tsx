@@ -6,6 +6,7 @@ import eventDinner01 from "../assets/events-real/event-dinner-01.jpg";
 import eventDinner02 from "../assets/events-real/event-dinner-02.jpg";
 import eventDinner03 from "../assets/events-real/event-dinner-03.jpg";
 import eventDinner04 from "../assets/events-real/event-dinner-04.jpg";
+import { siteUrl } from "../lib/site";
 
 export const Route = createFileRoute("/dining")({
   head: () => ({
@@ -22,9 +23,9 @@ export const Route = createFileRoute("/dining")({
         content:
           "Relax in the newly renovated 19th Hole Lounge, lower patio or upper patio after your round.",
       },
-      { property: "og:url", content: "https://www.richmondhillgolf.com/dining" },
+      { property: "og:url", content: siteUrl("/dining") },
     ],
-    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/dining" }],
+    links: [{ rel: "canonical", href: siteUrl("/dining") }],
   }),
   component: DiningPage,
 });

@@ -8,6 +8,7 @@ import academyBays from "../assets/academy/academy-bays.jpg";
 import academyBayDark from "../assets/academy/academy-bay-dark.jpg";
 import rangeFour from "../assets/academy/range-4.jpg";
 import juniorCamp from "../assets/academy/junior-camp.webp";
+import { siteUrl } from "../lib/site";
 import donnaNorman from "../assets/academy/donna-norman.jpg";
 import allenPanuncio from "../assets/academy/allen-panuncio.jpg";
 import robMiceli from "../assets/academy/rob-miceli.jpg";
@@ -31,9 +32,9 @@ export const Route = createFileRoute("/academy")({
         content:
           "Get your game in shape — private, semi-private, group and junior lessons, year-round.",
       },
-      { property: "og:url", content: "https://www.richmondhillgolf.com/academy" },
+      { property: "og:url", content: siteUrl("/academy") },
     ],
-    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/academy" }],
+    links: [{ rel: "canonical", href: siteUrl("/academy") }],
   }),
   component: AcademyPage,
 });

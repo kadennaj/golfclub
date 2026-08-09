@@ -41,9 +41,9 @@ export function ExperienceTile({ index, kicker, title, body, image, to, reverse 
           <span className="h-px w-8 bg-current opacity-60" />
           {kicker}
         </div>
-        <h3 className="reveal font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-balance">
+        <h2 className="reveal font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-balance">
           {title}
-        </h3>
+        </h2>
         <p className="reveal mt-5 text-charcoal/60 leading-relaxed text-pretty">{body}</p>
         <Link
           to={to}

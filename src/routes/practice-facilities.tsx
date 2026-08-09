@@ -6,6 +6,7 @@ import rangeFour from "../assets/academy/range-4.jpg";
 import academyBays from "../assets/academy/academy-bays.jpg";
 import academyBayDark from "../assets/academy/academy-bay-dark.jpg";
 import academyRoom from "../assets/academy/academy-room.jpg";
+import { siteUrl } from "../lib/site";
 
 export const Route = createFileRoute("/practice-facilities")({
   head: () => ({
@@ -24,10 +25,10 @@ export const Route = createFileRoute("/practice-facilities")({
       },
       {
         property: "og:url",
-        content: "https://www.richmondhillgolf.com/practice-facilities",
+        content: siteUrl("/practice-facilities"),
       },
     ],
-    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/practice-facilities" }],
+    links: [{ rel: "canonical", href: siteUrl("/practice-facilities") }],
   }),
   component: PracticeFacilitiesPage,
 });

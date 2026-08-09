@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
-import { useReveal } from "../../hooks/use-reveal";
 import { HeroVideo } from "./HeroVideo";
 
 type Props = {
@@ -14,7 +13,6 @@ type Props = {
 };
 
 export function PageHero({ kicker, title, intro, videoSrc, poster, logoSrc, logoAlt }: Props) {
-  useReveal();
   return (
     <section className="relative min-h-[80svh] overflow-hidden bg-charcoal text-cream">
       {videoSrc ? (

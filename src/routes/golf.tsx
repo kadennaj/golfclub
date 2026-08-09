@@ -4,6 +4,7 @@ import { PageHero } from "../components/site/PageHero";
 import { HolesCarousel } from "../components/site/HolesCarousel";
 import { SectionHeading } from "../components/site/SectionHeading";
 import { HOLES, hole08 } from "../data/holes";
+import { siteUrl } from "../lib/site";
 
 export const Route = createFileRoute("/golf")({
   head: () => ({
@@ -19,9 +20,9 @@ export const Route = createFileRoute("/golf")({
         property: "og:description",
         content: "A walkable parkland course open to the public — 18 holes, par 70.",
       },
-      { property: "og:url", content: "https://www.richmondhillgolf.com/golf" },
+      { property: "og:url", content: siteUrl("/golf") },
     ],
-    links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/golf" }],
+    links: [{ rel: "canonical", href: siteUrl("/golf") }],
   }),
   component: GolfPage,
 });
