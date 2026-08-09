@@ -7,6 +7,8 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import appCss from "../styles.css?url";
 import { Nav } from "../components/site/Nav";
@@ -117,6 +119,8 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      <Analytics />
+      <SpeedInsights />
     </QueryClientProvider>
   );
 }
