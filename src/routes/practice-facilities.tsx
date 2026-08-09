@@ -22,6 +22,10 @@ export const Route = createFileRoute("/practice-facilities")({
         content:
           "Outdoor range, practice greens, bunker work, heated indoor space and three GC Hawk simulators.",
       },
+      {
+        property: "og:url",
+        content: "https://www.richmondhillgolf.com/practice-facilities",
+      },
     ],
     links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/practice-facilities" }],
   }),

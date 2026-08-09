@@ -1,0 +1,26 @@
+# Richmond Hill Golf Club
+
+> Richmond Hill Golf Club is a fully public 18-hole parkland golf course at 8755 Bathurst Street in Richmond Hill, Ontario, Canada.
+
+Canonical website: https://www.richmondhillgolf.com/
+
+## Main pages
+
+- Golf course: https://www.richmondhillgolf.com/golf
+- Golf academy and simulators: https://www.richmondhillgolf.com/academy
+- Tournaments and private events: https://www.richmondhillgolf.com/events
+- Dining and the 19th Hole Lounge: https://www.richmondhillgolf.com/dining
+- Practice facilities: https://www.richmondhillgolf.com/practice-facilities
+- Golf leagues: https://www.richmondhillgolf.com/league
+- Elite Prepaid Membership: https://www.richmondhillgolf.com/elite-prepaid-membership
+- Contact information: https://www.richmondhillgolf.com/contact
+
+## Contact
+
+- Telephone: +1-905-889-4653
+- Email: info@richmondhillgolf.com
+- Address: 8755 Bathurst Street, Richmond Hill, Ontario, L4C 0H4, Canada
+
+## Crawling
+
+Public website content may be crawled and summarized. Refer to https://www.richmondhillgolf.com/robots.txt for crawler directives and https://www.richmondhillgolf.com/sitemap.xml for canonical public URLs.

@@ -14,6 +14,7 @@ import academyBays from "../assets/academy/academy-bays.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    meta: [{ property: "og:url", content: "https://www.richmondhillgolf.com/" }],
     links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/" }],
   }),
   component: HomePage,

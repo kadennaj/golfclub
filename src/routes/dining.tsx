@@ -22,6 +22,7 @@ export const Route = createFileRoute("/dining")({
         content:
           "Relax in the newly renovated 19th Hole Lounge, lower patio or upper patio after your round.",
       },
+      { property: "og:url", content: "https://www.richmondhillgolf.com/dining" },
     ],
     links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/dining" }],
   }),

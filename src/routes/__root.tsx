@@ -1,8 +1,7 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
-  createRootRouteWithContext,
+  createRootRoute,
   useRouter,
   HeadContent,
   Scripts,
@@ -13,6 +12,33 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import appCss from "../styles.css?url";
 import { Nav } from "../components/site/Nav";
 import { Footer } from "../components/site/Footer";
+
+const SITE_URL = "https://www.richmondhillgolf.com";
+const SOCIAL_IMAGE_URL = `${SITE_URL}/og/richmond-hill-golf-club.jpg`;
+
+const golfCourseStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "GolfCourse",
+  "@id": `${SITE_URL}/#golf-course`,
+  name: "Richmond Hill Golf Club",
+  description:
+    "A fully public 18-hole parkland golf course with an academy, dining, practice facilities, leagues and events in Richmond Hill, Ontario.",
+  url: `${SITE_URL}/`,
+  image: SOCIAL_IMAGE_URL,
+  logo: `${SITE_URL}/rhgc-logo.png`,
+  telephone: "+1-905-889-4653",
+  email: "info@richmondhillgolf.com",
+  publicAccess: true,
+  currenciesAccepted: "CAD",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "8755 Bathurst Street",
+    addressLocality: "Richmond Hill",
+    addressRegion: "ON",
+    postalCode: "L4C 0H4",
+    addressCountry: "CA",
+  },
+};
 
 function NotFoundComponent() {
   return (
@@ -69,7 +95,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -86,9 +112,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Public golf in Richmond Hill, Ontario. 18 holes · Par 70 · open to everyone.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Richmond Hill Golf Club" },
+      { property: "og:locale", content: "en_CA" },
+      { property: "og:image", content: SOCIAL_IMAGE_URL },
+      { property: "og:image:width", content: "2400" },
+      { property: "og:image:height", content: "1500" },
+      {
+        property: "og:image:alt",
+        content: "The course at Richmond Hill Golf Club",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: SOCIAL_IMAGE_URL },
+      { name: "twitter:image:alt", content: "The course at Richmond Hill Golf Club" },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", sizes: "512x512", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -101,6 +142,10 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(golfCourseStructuredData) }}
+        />
       </head>
       <body>
         {children}
@@ -111,9 +156,8 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Nav />
       <main className="min-h-screen">
         <Outlet />
@@ -121,6 +165,6 @@ function RootComponent() {
       <Footer />
       <Analytics />
       <SpeedInsights />
-    </QueryClientProvider>
+    </>
   );
 }

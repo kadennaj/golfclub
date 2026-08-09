@@ -18,6 +18,10 @@ export const Route = createFileRoute("/elite-prepaid-membership")({
         property: "og:description",
         content: "The ultimate in convenience and savings for you and your guests.",
       },
+      {
+        property: "og:url",
+        content: "https://www.richmondhillgolf.com/elite-prepaid-membership",
+      },
     ],
     links: [
       {

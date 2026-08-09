@@ -15,6 +15,7 @@ export const Route = createFileRoute("/contact")({
       },
       { property: "og:title", content: "Contact — Richmond Hill Golf Club" },
       { property: "og:description", content: "Visit, call, or send a note." },
+      { property: "og:url", content: "https://www.richmondhillgolf.com/contact" },
     ],
     links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/contact" }],
   }),

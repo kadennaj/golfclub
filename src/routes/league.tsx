@@ -20,6 +20,7 @@ export const Route = createFileRoute("/league")({
         content:
           "Weekly league golf, season-long points races, prizes, banquets and Golf Genius scoring.",
       },
+      { property: "og:url", content: "https://www.richmondhillgolf.com/league" },
     ],
     links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/league" }],
   }),

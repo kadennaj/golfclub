@@ -25,6 +25,7 @@ export const Route = createFileRoute("/events")({
         property: "og:description",
         content: "A unique set of services and amenities for corporate, charity and social events.",
       },
+      { property: "og:url", content: "https://www.richmondhillgolf.com/events" },
     ],
     links: [{ rel: "canonical", href: "https://www.richmondhillgolf.com/events" }],
   }),
